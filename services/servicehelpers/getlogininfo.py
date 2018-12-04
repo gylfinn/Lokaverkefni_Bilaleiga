@@ -4,7 +4,7 @@ class IsInfoValid:
     def check_acc(self,datalist, username):
         for line in datalist:
             if username == line[0]:
-                return True
+                return True 
             
         return False
     

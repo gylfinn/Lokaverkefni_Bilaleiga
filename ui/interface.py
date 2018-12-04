@@ -3,7 +3,7 @@ import getpass
 import os
 
 class Interface:
-    def __init__(self):
+    def __init__(self): 
         self.__login = Login()
 
     def login_screen(self):

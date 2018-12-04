@@ -1,6 +1,6 @@
 import csv
 
-class GetUserData:
+class GetUserData: 
     def __init__(self):
         self.__userdata = []
 
