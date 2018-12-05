@@ -1,23 +1,14 @@
 import os
 
 class MainMenu:
-
-
-
-    def header(self, check_if_admin, username,):
-        if check_if_admin:
-            admintag = "(A)"
-        else:
-            admintag = ""
-        print("------------------------------------")
-        print("Welcome {}{} {}".format(username, admintag, time.ctime()))
-        return
-
-    def mainMenu(self, check_if_admin, username):
+    def __init__(self, isadmin, username, fullname):
+        self.isadmin = isadmin
+        self.username = username
+        self.fullname = fullname
+    def main_menu(self):
         os.system('cls')
         selection = ""
         while(selection !="9"):
-            LoginMenu.header(self, check_if_admin, username)
             print("Main Menu")
             print("1. Order")
             print("2. Cars")
@@ -28,10 +19,14 @@ class MainMenu:
             os.system('cls')
 
             if selection == "1":
-                Interface.orderMenu(self)
+                #OrderMenu.order_menu()
+                pass
             elif selection == "2":
-                Interface.carMenu(self, check_if_admin)
+                #Interface.carMenu(self, check_if_admin)
+                pass
             elif selection == "3":
-                Interface.customerMenu(self, check_if_admin)
+                #Interface.customerMenu(self, check_if_admin)
+                pass
             elif selection == "9":
-                Interface.loginScreen(self)
+                #Interface.loginScreen(self)
+                pass
