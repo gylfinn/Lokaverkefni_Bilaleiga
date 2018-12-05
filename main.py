@@ -3,7 +3,7 @@ from services.VehicleManager import VehicleManger
 
 def main():
     ui = LoginMenu()
-    ui.login_menu()
+    ui.loginScreen()
     
 
 main()

@@ -1,6 +1,6 @@
 username,name,address,phonenumber,password,admin
-admin,admin,menntavegur1,5812345,admin,1
-gylfi18,Gylfi Helgason,arnarhraun 36,6931730,pass123,0
+admin,admin,Menntavegur1,5812345,admin,1
+gylfi18,Gylfi Helgason,Arnarhraun 36,6931730,pass123,0
 havar18,Havar Sigurdarson,Bolstadarhlid 23,6666990,pass123,0
 birna17,Birna Osk Valtysdottir,Mariubakki 26,7735550,pass123,0
 heida18,Heida Osk Gardarsdottir,Nonnugata 3,7716976,pass123,0
