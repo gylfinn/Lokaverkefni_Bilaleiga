@@ -1,8 +1,10 @@
 class Vehicle(object):
-    def __init__(self, registration_num, model_year, rented=0):
+    def __init__(self, registration_num, model_year, brand, price):
         self.__registration_num = registration_num
         self.__model_year = model_year
-        self.__rented = rented
+        self.__rented = 0
+        self.__brand = brand
+        self.__price = price
     
     def getRegistrationNum(self):
         return self.__registration_num
@@ -24,23 +26,31 @@ class Vehicle(object):
     def setRented(self, new_rented):
         self.__rented = new_rented
         return self.__rented
+
+    def getPrice(self):
+        return self.__price
+
+    def setPrice(self, new_price):
+        self.__price = new_price
+
+    def getBrand(self):
+        return self.__brand
+
+    def setBrand(self, new_brand):
+        self.__brand = new_brand
     
     def __str__(self):
-        return "{}, {}, {}".format(self.__model_year, self.__registration_num, self.__rented)
+        return "Model year: {}, Registration number: {},Rented: {},Brand: {},Price {}".format(self.getRegistrationNum(), self.getModelYear(), self.getRented(), self.getBrand(), self.getPrice())
 
+'''class Sedan(Vehicle):
+    def __init__(self, registration_num, model_year, brand, price):
+        super().__init__(registration_num, model_year, brand, price)
 
-car1 = Vehicle("AB-523", 1995, 0)
-car2 = Vehicle("AB-325", 2000, 1)
-car3 = Vehicle("CD-523", 1998, 0)
-car4 = Vehicle("DA-523", 1995, 1)
-car5 = Vehicle("UT-523", 1993, 0)
+class Hatchback(Vehicle):
+    def __init__(self, registration_num, model_year, brand, price):
+        super().__init__(registration_num, model_year, brand, price)
 
-print(car1)
-print(car2)
-print(car3)
-print(car4)
-print(car5)
-
-car2.setModelYear(1503)
-print(car2)
+class SUV(Vehicle):
+    def __init__(self, registration_num, model_year, brand, price):
+        super().__init__(registration_num, model_year, brand, price)'''
 
