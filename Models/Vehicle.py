@@ -12,21 +12,18 @@ class Vehicle(object):
         
     def setRegistrationNum(self, new_registration_num):
         self.__registration_num = new_registration_num
-        return self.__registration_num
 
     def getModelYear(self):
         return self.__model_year
 
     def setModelYear(self, new_model_year):
         self.__model_year = new_model_year
-        return self.__model_year
     
     def getRented(self):
         return self.__rented
     
     def setRented(self, new_rented):
         self.__rented = new_rented
-        return self.__rented
 
     def getPrice(self):
         return self.__price
@@ -42,7 +39,6 @@ class Vehicle(object):
     
     def getType(self):
         return self.__type
-    
     def __str__(self):
         return "Model year: {}, Registration number: {},Rented: {},Brand: {},Price {}".format(self.getRegistrationNum(), self.getModelYear(), self.getRented(), self.getBrand(), self.getPrice())
 
