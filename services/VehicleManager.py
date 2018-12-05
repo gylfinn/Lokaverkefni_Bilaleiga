@@ -18,12 +18,12 @@ class VehicleManger(object):
         self.loadAvailableVehicles()
     def loadVehicles(self):
         for line in self.__Vehicles_Data:
-            regnum = str(line).split(',')[REGISTRATION_NUMBER]
-            rented = str(line).split(',')[RENTED]
-            model_year = str(line).split(',')[MODEL_YEAR]
-            brand = str(line).split(',')[BRAND]
-            price = str(line).split(',')[PRICE]
-            car_type = str(line).split(',')[CAR_TYPE]
+            regnum = line[REGISTRATION_NUMBER]
+            rented = line[RENTED]
+            model_year = line[MODEL_YEAR]
+            brand = line[BRAND]
+            price = line[PRICE]
+            car_type = line[CAR_TYPE]
             car = Vehicle(regnum, model_year, rented, brand, price, car_type)
             self.__Vehicles.append(car)
     def loadAvailableVehicles(self):
@@ -34,6 +34,10 @@ class VehicleManger(object):
         for Veh in self.__Vehicles:
             if Veh.getRented():
                 self.__VehiclesInRent.append(Veh)
+    def registerNewVehicle(self, registration_number, rented, model_year, brand, price, car_type):
+        newVehicle = Vehicle(registration_number, model_year, rented, brand, price, car_type)
+        self.__Vehicles.append(newVehicle)
+        return newVehicle
     def getVehicles(self):
         return self.__Vehicles
     def getAvailable(self):
