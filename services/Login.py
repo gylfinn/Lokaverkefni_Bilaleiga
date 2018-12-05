@@ -1,5 +1,5 @@
 from repo.GetData import GetData
-from services.servicehelpers.GetLoginInfo import IsInfoValid
+from services.servicehelpers.IsInfoValid import IsInfoValid
 
 class Login:
     def __init__(self): 
@@ -18,6 +18,10 @@ class Login:
         is_admin = self.__check_login_info.check_admin(self.__raw_data, username)
         if is_admin:
             return True
+
+    def getFullname(self, username):
+        fullname = self.__check_login_info.get_fullname(self.__raw_data, username)
+        return fullname
     # kalla í 2 önnur föll "user exits" og "password match (correct password)"
     #def validateUser():
         
