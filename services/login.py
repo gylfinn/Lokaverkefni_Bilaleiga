@@ -1,9 +1,9 @@
-from repo.GetUserData import GetUserData
+from repo.GetData import GetData
 from services.servicehelpers.GetLoginInfo import IsInfoValid
 
 class Login:
     def __init__(self): 
-        self.__user_data = GetUserData()
+        self.__user_data = GetData('users.csv')
         self.__check_login_info = IsInfoValid()
         self.__raw_data = self.__user_data.readData()
     # Sendi usernameið og password í servicehelper til að athuga hvort það sé til
