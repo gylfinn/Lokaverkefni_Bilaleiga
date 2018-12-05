@@ -1,7 +1,7 @@
-from ui.Interface import Interface
+from ui.LoginMenu import LoginMenu
 
 def main():
-    ui = Interface()
+    ui = LoginMenu()
     ui.loginScreen()
     
 

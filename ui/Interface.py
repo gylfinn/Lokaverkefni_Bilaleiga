@@ -27,7 +27,7 @@ class Interface:
         else:
             admintag = ""
         print("------------------------------------")
-        print("Welcome {}{}{}".format(username, admintag, time.ctime()))
+        print("Welcome {}{} {}".format(username, admintag, time.ctime()))
         return
 
     def mainMenu(self, check_if_admin, username):
