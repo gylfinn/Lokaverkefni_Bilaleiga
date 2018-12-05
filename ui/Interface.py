@@ -1,4 +1,4 @@
-from services.login import Login
+from services.Login import Login
 import getpass
 import os
 import time
@@ -113,11 +113,20 @@ class Interface:
             os.system('cls')
 
     def customerMenu(self, check_if_admin):
+        selection = ""
         os.system('cls')
-        cust_selection = ""
-        while (cust_selection !="9"):
+        while (selection !="9"):
             print("Customers")
             print("1. Lookup Customer")
             if check_if_admin:
                 print("2. Register Customer")
             print("9. Go Back")
+            selection = input()
+            os.system('cls')
+
+            if selection == "1":
+                customer = self.__customer.lookUpCustomer()
+                print(customer)
+            if selection == "2" and check_if_admin:
+                self.__customer.registerCustomer()
+
