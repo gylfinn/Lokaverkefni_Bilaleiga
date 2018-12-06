@@ -1,12 +1,15 @@
 from repo.GetData import GetData
+from repo.SaveData import SaveData
 from Models.Order import Order
 
+ORDER_FILE = "orders.csv"
 class OrderManager(object):
     def __init__(self):
-        self.__Orders_Data = GetData("orders.csv").readData()
+        self.__Orders_Data = GetData(ORDER_FILE).readData()
         self.__Orders = []
+        self.__DataSaver = SaveData(ORDER_FILE)
         for order in self.__Orders_Data:
-            newOrder = Order(order[0], order[1], order[2], order[3], order[4], order[5])
+            newOrder = Order(order[0], order[1], order[2], order[3], order[4], order[5]) #TODO: Add constants
             self.__Orders.append(newOrder)
     
     def createOrder(self, order_id, car_reg, customer_SSN, date_from, date_to, price):
@@ -19,7 +22,7 @@ class OrderManager(object):
     
     def getOrders(self, by_dates = False):
         if by_dates:
-            return self.__Orders #TODO
+            return self.__Orders #TODO: Látta þetta virka
         else:
             return self.__Orders
 
@@ -34,4 +37,4 @@ class OrderManager(object):
         return None #Ef ekkert order er found þá returnar hann none
 
     def Save(self):
-        pass # Save-a öllum order í csv skrá eftir notkun
+        self.__DataSaver.WriteData(self.__Orders)

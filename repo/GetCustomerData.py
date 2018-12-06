@@ -4,7 +4,7 @@ class GetCustomerData:
     def __init__(self):
         self.__customer_data = []
 
-    def readCustomerData(self):
+    def readCustomerData(self):#Gætir notað bara GetData og SaveData
         with open ("./data/customers.csv", "r") as customer_file:
             csv_reader = csv.reader(customer_file)
             next(csv_reader)
