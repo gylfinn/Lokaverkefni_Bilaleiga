@@ -20,3 +20,9 @@ class Customer:
         SSN = input("SSN: ")
         customer = self.__customer_info.getCustomer(SSN)
         return customer
+
+    def changeInfo(self, customer, name, replace_index):
+        self.__customer_data.changeCustomerInfo(customer, name, replace_index)
+    
+    def deleteCustomer(self, customer, ssn):
+        self.__customer_data.deleteCustomer(customer, ssn)
