@@ -15,10 +15,14 @@ class OrderManager(object):
     def createOrder(self, order_id, car_reg, customer_SSN, date_from, date_to, price):
         newOrder = Order(order_id, car_reg, customer_SSN, date_from, date_to, price)
         self.__Orders.append(newOrder)
+        self.__Orders_Data.append([order_id, car_reg, customer_SSN, date_from, date_to, price])
+        self.Save()
         return newOrder
         
     def removeOrder(self, order_id):
+        order_id -= 1 # Ekki nice en works
         self.__Orders.pop(order_id)
+        self.__Orders_Data.pop(order_id)
     
     def getOrders(self, by_dates = False):
         if by_dates:
@@ -37,4 +41,4 @@ class OrderManager(object):
         return None #Ef ekkert order er found þá returnar hann none
 
     def Save(self):
-        self.__DataSaver.WriteData(self.__Orders)
+        self.__DataSaver.WritOrdersData(self.__Orders_Data)
