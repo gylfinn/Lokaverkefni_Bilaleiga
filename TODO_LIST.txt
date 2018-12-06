@@ -1,0 +1,37 @@
+Birta alla lausa bíla
+● Birta alla bíla sem eru í útleigu sem stendur
+    DONE bara eftir að koma inní UI tengja saman
+
+
+● Skrá viðskiptavin með öllum nauðsynlegum upplýsingum
+    DONE bara eftir að koma inní UI tengja saman
+
+● Fletta viðskiptavini upp í kerfinu þegar þörf er á
+    DONE bara eftir að koma inní UI tengja saman
+
+● Skrá pöntun fyrir ákveðna bílategund á ákveðnum degi í ákveðinn tíma
+    Alveg eftir.
+
+● Fletta upp pöntun aftur þegar þörf er á
+    DONE bara eftir að koma inní UI tengja saman
+
+● Reikna hvað leiga kostar án breytilegs kostnaðar (svo sem tryggingu)
+    Alveg eftir
+
+● Skila bíl í lok leigutímabils
+    Alveg eftir
+
+● Afskrá viðskiptavin
+    DONE bara eftir að koma inní UI tengja saman
+
+● Bakfæra pöntun (afpanta bíl)
+    Alveg eftir
+
+● Breyta/uppfæra skráningu um viðskiptavin
+    DONE bara eftir að koma inní UI tengja saman
+
+● Breyta/uppfæra fyrri pöntun
+    Alveg eftir
+
+● Villumeðhöndlun á innslætti á kennitölu, dagsetningum og öðrum lykilgildum
+    Alveg eftir
