@@ -1,8 +1,8 @@
 import os
 from ui.MainMenu import MainMenu
 from ui.OrderMenu.UpcomingOrders.UpcomingOrders import UpcomingOrders
-
-
+from ui.OrderMenu.NewOrder.NewOrder import NewOrder
+from ui.OrderMenu.LookupOrder.LookupOrder import LookupOrder
 class OrderMenu:
     def __init__(self, isadmin, username, fullname):
         self.isadmin = isadmin
@@ -22,10 +22,14 @@ class OrderMenu:
             if order_menu_selection == "1":
                 UpcomingOrders.upcoming_orders(self)
             elif order_menu_selection == "2":
-                NewOrder.new_order(self)
+                pass
+                #NewOrder.new_order(self)
             elif order_menu_selection == "3":
-                LookupOrder.lookup_order(self)
+                pass
+                #LookupOrder.lookup_order(self)
             elif order_menu_selection =="8":
-                MainMenu.main_menu(self)
+                pass
+                #MainMenu.main_menu(self)
             elif order_menu_selection == "9":
-                MainMenu.main_menu(self)
+                pass
+                #MainMenu.main_menu(self)
