@@ -5,8 +5,8 @@ class Order():
         self.__order_id = order_id
         self.__car_registration_number = car_registration_number
         self.__customer_ssn = customer_SSN
-        self.__date_from = datetime(date_from)
-        self.__date_to = datetime(date_to)
+        self.__date_from = datetime.strptime(date_from, "%b %d %Y %I:%M%p")
+        self.__date_to = datetime.strptime(date_to, "%b %d %Y %I:%M%p")
         self.__total_price = total_price
     def getOrderid(self):
         return self.__order_id
@@ -22,6 +22,8 @@ class Order():
         return self.__total_price
     def __gt__(self, other):
         return self.__date_from > other.date_from
+    def __repr__(self):
+        return [self.getOrderid(), self.getCarRegistration(), self.getCustomerSSN(), self.getDateFrom(), self.getDateTo(), self.getPrice()]
     def __str__(self):
         return "OrderID: {}, Car Registration: {} Customer SSN: {} Date: From {} to {}, Price:{}".format(self.getOrderid(), self.getCarRegistration(), self.getCustomerSSN(), self.getDateFrom(), self.getDateTo(), self.getPrice())
     
