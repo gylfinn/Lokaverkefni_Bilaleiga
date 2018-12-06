@@ -1,5 +1,4 @@
 import os
-from ui.MenuManager import MenuManager
 
 #This class calls a service class that returns this class a list of upcoming orders
 #This class then displays that to the user
@@ -7,9 +6,6 @@ from ui.MenuManager import MenuManager
 class UpcomingOrders:
     def __init__(self):
         pass
-        # self.isadmin = isadmin
-        # self.username = username
-        # self.fullname = fullname
     def upcomingOrders(self):
         os.system('cls')
         upcoming_order_menu_selection = ""
@@ -18,4 +14,4 @@ class UpcomingOrders:
             print("9. Back")
             upcoming_order_menu_selection = input()
             if upcoming_order_menu_selection == "9":
-                MenuManager.gotoClass("ordermenu")
+                pass

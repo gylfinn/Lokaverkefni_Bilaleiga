@@ -1,13 +1,9 @@
 import os
-from ui.MenuManager import MenuManager
 
 #This class is only 
 class OrderMenu:
-    def __init__(self):
-        pass
-        # self.isadmin = isadmin
-        # self.username = username
-        # self.fullname = fullname
+    def __init__(self, manager):
+        self.__manager = manager
     def orderMenu(self):
         os.system('cls')
         order_menu_selection = ""
@@ -17,12 +13,12 @@ class OrderMenu:
             print("2. New Order")
             print("3. Look up order")
             print("9. Back")
-
+            order_menu_selection = input()
             if order_menu_selection == "1":
-                MenuManager.gotoClass("upcomingorders")
+                self.__manager.gotoClass("upcomingorders")
             elif order_menu_selection == "2":
-                MenuManager.gotoClass("neworder")
+                self.__manager.gotoClass("neworder")
             elif order_menu_selection == "3":
-                MenuManager.gotoClass("lookuporders")
+                self.__manager.gotoClass("lookuporders")
             elif order_menu_selection =="9":
-                MenuManager.gotoClass("mainmenu")
+                self.__manager.gotoClass("mainmenu")

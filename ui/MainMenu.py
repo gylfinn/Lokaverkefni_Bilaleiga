@@ -1,10 +1,8 @@
 import os
 
 class MainMenu:
-    def __init__(self, isadmin, username, fullname):
-        self.isadmin = isadmin
-        self.username = username
-        self.fullname = fullname
+    def __init__(self, manager):
+        self.__manager = manager
     def main_menu(self):
         os.system('cls')
         selection = ""
@@ -19,14 +17,10 @@ class MainMenu:
             os.system('cls')
 
             if selection == "1":
-                #OrderMenu.order_menu()
-                pass
+                self.__manager.gotoClass("ordermenu")
             elif selection == "2":
-                #Interface.carMenu(self, check_if_admin)
-                pass
+                self.__manager.gotoClass("carmenu")
             elif selection == "3":
-                #Interface.customerMenu(self, check_if_admin)
-                pass
+                self.__manager.gotoClass("customermenu")
             elif selection == "9":
-                #Interface.loginScreen(self)
-                pass
+                self.__manager.gotoClass("loginmenu")

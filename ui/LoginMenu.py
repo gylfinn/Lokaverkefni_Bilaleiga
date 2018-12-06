@@ -6,9 +6,10 @@ import os
 import time
 
 class LoginMenu:
-    def __init__(self): 
+    def __init__(self, mananger): 
         self.__login = Login()
         self.__getlogininfo = IsInfoValid()
+        self.__manager = mananger
     def login_menu(self):
         os.system('cls') #  hreinsar console gluggann
         while True:
@@ -19,8 +20,7 @@ class LoginMenu:
             if valid_user:
                 self.isadmin = self.__login.isAdmin(username) #athugar hvort notandi sé með adminréttindi
                 self.fullname = self.__getlogininfo.get_fullname
-                #MainMenu.main_menu(self, check_if_admin, username, fullname)
-                MainMenu.main_menu(self)
+                self.__manager.gotoClass("mainmenu")
             else: # ef annaðhvort username eða password er vitlaust
                 os.system('cls')
                 print("Wrong Username and/or Password\n")
