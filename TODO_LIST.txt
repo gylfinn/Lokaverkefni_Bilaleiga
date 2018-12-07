@@ -10,7 +10,11 @@
 
 5. Vantar CLEAR í look up order
 
-6. 
+6. CRUCIAL
+Customer og Order er til í services. Hinsvegar ætti það að vera í Models?
+Order er til líka í Models.
+
+Sameina virkni í öllu þessu og hafa þetta BARA Í models.
 
 
 
