@@ -1,4 +1,25 @@
-Birta alla lausa bíla
+1. GERA MENU MANAGER KLASA SEM SÉR UM AÐ FLAKKA Á MILLI MENUA
+    forðumst þannig import setningar í öllum UI klösum og getum
+    importað allt í þann eina klasa og hann sér um að kalla á rétt menu
+
+2. Tengja allt saman
+
+3. Vantar back takka í customer> lookupcustomer
+
+4. Vantar back takka í customer > register (HÆTTA VIÐ)
+
+5. Vantar CLEAR í look up order
+
+6. 
+
+
+
+
+
+
+● Birta alla lausa bíla
+    Done, bara tengja við UI
+
 ● Birta alla bíla sem eru í útleigu sem stendur
     DONE bara eftir að koma inní UI tengja saman
 
