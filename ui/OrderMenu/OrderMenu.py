@@ -19,6 +19,6 @@ class OrderMenu:
             elif order_menu_selection == "2":
                 self.__manager.gotoClass("neworder")
             elif order_menu_selection == "3":
-                self.__manager.gotoClass("lookuporders")
+                self.__manager.gotoClass("lookupordermenu")
             elif order_menu_selection =="9":
                 self.__manager.gotoClass("mainmenu")
