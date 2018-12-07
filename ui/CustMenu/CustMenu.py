@@ -9,7 +9,7 @@ class CustMenu:
     def customerMenu(self):
         selection = ""
         os.system('cls')
-        while (selection !="9"):
+        while (selection != "9"):
             print("Customers")
             print("1. Lookup Customer")
             print("2. Register Customer")
@@ -18,14 +18,13 @@ class CustMenu:
             selection = input()
             os.system('cls')
 
+            # kallar í annan UI klasa sem spyr um SSN og leita af viðskiptavininum
+
             if selection == "1":
-                SSN = input("SSN: ")
-                customer = self.__customer.lookUpCustomer(SSN)
-                if customer != None:
-                    self.__manager.gotoclass("lookupcustomermenu")
-                    #LookupCustomerMenu(self, customer)
-                else:
-                    print("Customer does not exist")                   
+                self.__manager.gotoClass("lookupcustomer")
+
+            # kallar í anna UI klasa sem spyr um upplýsingar um notandann sem sendi þær áfram
+            # í service og niður i repo sem skrifar gögnin    
+            #               
             elif selection == "2":
-                self.__customer.registerCustomer()
-                os.system('cls')
+                self.__manager.gotoClass("registercustomer")
