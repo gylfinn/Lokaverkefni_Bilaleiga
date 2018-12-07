@@ -16,9 +16,8 @@ class Customer:
         driver_license_number = input("Driver License number: ")
         self.__customer_data.register_customer(name, SSN, adress, phonenumber, driver_license_number)
 
-    def lookUpCustomer(self):
-        SSN = input("SSN: ")
-        customer = self.__customer_info.getCustomer(SSN)
+    def lookUpCustomer(self, ssn):
+        customer = self.__customer_info.getCustomer(ssn)
         return customer
 
     def changeInfo(self, customer, name, replace_index):
