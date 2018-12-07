@@ -9,6 +9,11 @@ class SaveData():
         for order in Orders:
             writer.writerow(order)
         file.close()
-    def WriteVehicleData(self, ehicle):
-        pass #Add Later
+    def WriteVehicleData(self, vehicles):
+        file = open(self.__file_name, "w", newline = '')
+        file.write("registrationnumber,rented,modelyear,brand,price,type\n")
+        writer = csv.writer(file, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
+        for veh in vehicles:
+            writer.writerow(veh)
+        file.close()
 

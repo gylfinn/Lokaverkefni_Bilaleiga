@@ -45,9 +45,24 @@ class VehicleManger(object):
     def registerNewVehicle(self, registration_number, rented, model_year, brand, price, car_type):
         newVehicle = Vehicle(registration_number, model_year, rented, brand, price, car_type)
         self.__Vehicles.append(newVehicle)
+        self.__Vehicles_Data.append([registration_number, rented, model_year, brand, price, car_type])
         self.Save() #Save-a í hvert sinn sem við bætum við nýjum bíl
         return newVehicle
 
+    def deregisterVehicle(self, registration_number):
+        vehid = self.findVehicleID(registration_number)
+        if vehid:
+            self.__Vehicles.pop(vehid)
+            self.__Vehicles_Data.pop(vehid)
+            self.Save()
+        else:
+            return None
+            
+    def findVehicleID(self, registration_number):
+        for index, vehicle in enumerate(self.__Vehicles):
+            if vehicle.getRegistrationNum() == registration_number:
+                return index
+        return None
     def getVehicles(self):
         return self.__Vehicles
 
@@ -58,5 +73,5 @@ class VehicleManger(object):
         return self.__VehiclesInRent
 
     def Save(self):
-        self.__DataSaver.WriteData(self.__Vehicles)
+        self.__DataSaver.WriteVehicleData(self.__Vehicles_Data)
         
