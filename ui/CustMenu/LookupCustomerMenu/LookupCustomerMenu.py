@@ -1,17 +1,16 @@
 import os
 from services.Customer import Customer
-from services.Order import Order
-
 class LookupCustomerMenu:
     def __init__(self, manager):
         self.__manager = manager
         self.__customer = Customer()
-        self.__order = Order()
 
-    def customerMenuSelection(self, customer):
+    def customerMenuSelection(self):
             selection = ""
+
+            customer = self.__customer.lookUpCustomer(500)
             os.system('cls')
-            while (selection !="9"):
+            while (selection != "9"):
                 print(customer)
                 print("1. Update information ")
                 print("2. Customer Order History")

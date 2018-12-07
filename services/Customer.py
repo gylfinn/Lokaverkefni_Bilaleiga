@@ -7,13 +7,7 @@ class Customer:
         self.__customer_data = GetCustomerData()
         self.__customer_info = GetCustomerInfo()
 
-    def registerCustomer(self):
-        os.system('cls')
-        name = input("Name: ")
-        SSN = input("SSN: ")
-        adress = input("Adress: ")
-        phonenumber = input("Phone number: ")
-        driver_license_number = input("Driver License number: ")
+    def registerCustomer(self, name, SSN, adress, phonenumber, driver_license_number):
         self.__customer_data.register_customer(name, SSN, adress, phonenumber, driver_license_number)
 
     def lookUpCustomer(self, ssn):

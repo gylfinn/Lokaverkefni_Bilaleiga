@@ -18,6 +18,11 @@ from ui.CustMenu.LookupCustomerMenu.UpdateInformation import UpdateInformation
 from ui.CustMenu.LookUpCustomer import LookUpCustomer
 from ui.CustMenu.RegisterCustomer import RegisterCustomer
 
+from ui.CarMenu.CarmMenu import CarMenu
+from ui.CarMenu.CarAdministrationMenu.CarAdministrationMenu import CarAdministrationMenu
+from ui.CarMenu.CarAdministrationMenu.DeregisterCar import DeregisterCar
+from ui.CarMenu.CarAdministrationMenu.RegisterNewCar import RegisterNewCa
+
 
 EMPTY = "EMPTY"
 CANCELORDER = "cancelorder"
@@ -34,6 +39,13 @@ NEWORDER = "neworder"
 CUSTMENU = "custmenu"
 LOOKUPCUSTOMERMENU = "lookupcustomermenu"
 UPDATEINFORMATION = "updateinformation"
+CARMENU = "carmenu"
+CARADMINISTRATIONMENU = "caradministration"
+DEREGISTERCAR = "deregistercar"
+REGISTERNEWCAR = "registernewcar"
+AVAILABLE = "available"
+CURRENTRENTALS = "currentrentals"
+OVERVIEW = "overview"
 
 #Menu manager sem sér um að ferðast á milli UI klasa.
 #Er kallað á hann með location sem er klasinn sem á að fara í
@@ -57,6 +69,10 @@ class MenuManager:
         self.__cancel_order = CancelOrder(self)
         self.__change_order = ChangeOrder(self)
         self.__chargeback_order = ChargebackOrder(self)
+        self.__car_menu = CarMenu(self)
+        self.__car_administration_menu = CarAdministrationMenu(self)
+        self.__register_new_car_menu = RegisterNewCar(self)
+        self.__deregister_car_menu = DeregisterCar(self)
 
 
         #--Start up at login loaction--
@@ -103,3 +119,11 @@ class MenuManager:
             self.__change_order.changeOrder()
         elif self.__location == CHARGEBACKORDER:
             self.__chargeback_order.changebackOrder()
+        elif self.__location == CARMENU:
+            self.__car_menu.carMenu()
+        elif self.__location == CARADMINISTRATIONMENU:
+            self.__car_administration_menu.carAdministrationMenu()
+        elif self.__location == REGISTERNEWCAR:
+            self.__register_new_car_menu.registerNewCar()
+        elif self.__location == DEREGISTERCAR:
+            self.__deregister_car_menu.deregisterCar()
