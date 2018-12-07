@@ -1,4 +1,4 @@
-
+import csv
 
 class GetOrderData:
     def __init__(self):
@@ -23,7 +23,7 @@ class GetOrderData:
             reader = csv.reader(order_file_r)
             for line in reader:
                 if order == line:
-                    customer[replace_index] = name
+                    order[replace_index] = name
                     new_list.append(order)
                 elif line != "":
                     new_list.append(order)
