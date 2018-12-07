@@ -2,6 +2,8 @@
 from ui.OrderMenu.OrderMenu import OrderMenu
 from ui.MainMenu import MainMenu
 from ui.LoginMenu import LoginMenu
+from services.VehicleManager import VehicleManger
+from services.OrderManager import OrderManager
 from ui.OrderMenu.LookupOrderMenu import LookupOrderMenu
 from ui.OrderMenu.UpcomingOrders import UpcomingOrders
 from ui.OrderMenu.NewOrder import NewOrder
@@ -24,14 +26,21 @@ class MenuManager:
         self.__main_menu = MainMenu(self)
         self.__order_menu = OrderMenu(self)
         self.__lookup_order_menu = LookupOrderMenu.LookupOrderMenu(self)
-        self.__upcoming_orders = UpcomingOrders.UpcomingOrders()
+        self.__upcoming_orders = UpcomingOrders.UpcomingOrders(self)
         self.__new_order = NewOrder.NewOrder(self)
+        self.__VehicleManager = VehicleManger()
+        self.__OrderManager = OrderManager()
+
 
         #--Start up at login loaction--
         self.gotoClass(LOGINMENU)
+
     def isAdmin(self):
         return self.__login_menu.isadmin
-
+    def getVehicleManger(self):
+        return self.__VehicleManager
+    def getOrderManager(self):
+        return self.__OrderManager
     def gotoClass(self, location):
         self.__last_location = self.__location
         self.__location = location

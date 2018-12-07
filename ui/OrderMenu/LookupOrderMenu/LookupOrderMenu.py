@@ -16,7 +16,6 @@ class LookupOrderMenu:
             print("2. Cancel Order")
             print("3. Chargeback Order")
             print("9. Back")
-
             lookup_order_selection = input()
 
             if lookup_order_selection == "1":
