@@ -1,16 +1,17 @@
-from ui.OrderMenu.OrderMenu import OrderMenu
 from ui.MainMenu import MainMenu
 from ui.LoginMenu import LoginMenu
+
 from services.VehicleManager import VehicleManger
 from services.OrderManager import OrderManager
-from ui.OrderMenu.LookupOrderMenu import LookupOrderMenu
 
+from ui.OrderMenu.OrderMenu import OrderMenu
+from ui.OrderMenu.LookupOrderMenu import LookupOrderMenu
 from ui.OrderMenu.LookupOrderMenu.CancelOrder import CancelOrder
 from ui.OrderMenu.LookupOrderMenu.ChangeOrder import ChangeOrder
 from ui.OrderMenu.LookupOrderMenu.ChargebackOrder import ChargebackOrder
-
 from ui.OrderMenu.UpcomingOrders import UpcomingOrders
 from ui.OrderMenu.NewOrder import NewOrder
+
 from ui.CustMenu.CustMenu import CustMenu
 from ui.CustMenu.LookupCustomerMenu.LookupCustomerMenu import LookupCustomerMenu
 from ui.CustMenu.LookupCustomerMenu.UpdateInformation import UpdateInformation
@@ -70,7 +71,7 @@ class MenuManager:
     def getOrderManager(self):
         return self.__OrderManager
 
-    def gotoClass(self, location, customer=None):
+    def gotoClass(self, location):
         self.__last_location = self.__location
         self.__location = location
 
@@ -87,18 +88,18 @@ class MenuManager:
         elif self.__location == NEWORDER:
             self.__new_order.newOrder()
         elif self.__location == LOOKUPCUSTOMERMENU:
-            self.__lookup_customer_menu.LookupCustomerMenu()
+            self.__lookup_customer_menu.lookupCustomerMenu()
         elif self.__location == CUSTMENU:
             self.__cust_menu.customerMenu()
         elif self.__location == UPDATEINFORMATION:
-            self.__location.UpdateInformation()
+            self.__update_information.updateInformation()
         elif self.__location == REGISTERCUSTOMER:
-            self.__location.RegisterCustomer()
+            self.__register_customer.registerCustomer()
         elif self.__location == LOOKUPCUSTOMER:
-            self.__location.LookUpCustomer()
+            self.__look_up_customer.lookupCustomer()
         elif self.__location == CANCELORDER:
-            self.__location.CancelOrder()
+            self.__cancel_order.cancelOrder()
         elif self.__location == CHANGEORDER:
-            self.__location.ChangeOrder()
+            self.__change_order.changeOrder()
         elif self.__location == CHARGEBACKORDER:
-            self.__location.ChargebackOrder()
+            self.__chargeback_order.changebackOrder()
