@@ -11,7 +11,12 @@ class DeregisterCar:
             vehicle_reg_num = input("Registration number of Vehicle: ")
             os.system('cls') #registrationnumber,rented,modelyear,brand,price,type
             print("Registration number of Vehicle: {}".format(vehicle_reg_num))
-            confirm = input("Enter 8 to Confirm or 9 to Cancel")
-            #klara
-            if confirm == "9":
+            deregister_car_confirmation = input("Enter 8 to Confirm or 9 to Cancel")
+            if deregister_car_confirmation == "8":
+                deregister_car = self.__manager.getVehicleManager().deregisterVehicle(vehicle_reg_num)
+                if deregister_car != None:
+                    print("{} deregistered succesfully".format(vehicle_reg_num))
+                else:
+                    print("Could not find car with reg number: {}".format(vehicle_reg_num))
+            elif deregister_car_confirmation == "9":
                 self.__manager.gotoClass("caradministrationmenu")
