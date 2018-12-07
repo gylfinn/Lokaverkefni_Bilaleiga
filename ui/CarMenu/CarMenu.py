@@ -17,6 +17,6 @@ class CarMenu:
             if car_menu_selection == "1":
                 self.__manager.gotoClass("caradministration")
             elif car_menu_selection == "2":
-                self.__manager.gotoClass("fleetmanager")
+                self.__manager.gotoClass("fleetmenu")
             elif car_menu_selection =="9":
                 self.__manager.gotoClass("mainmenu")
