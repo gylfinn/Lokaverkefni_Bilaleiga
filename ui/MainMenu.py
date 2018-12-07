@@ -21,6 +21,6 @@ class MainMenu:
             elif selection == "2":
                 self.__manager.gotoClass("carmenu")
             elif selection == "3":
-                self.__manager.gotoClass("customermenu")
+                self.__manager.gotoClass("custmenu")
             elif selection == "9":
                 self.__manager.gotoClass("loginmenu")
