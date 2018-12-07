@@ -16,4 +16,4 @@ class UpcomingOrders:
             print("9. Back")
             upcoming_order_menu_selection = input()
             if upcoming_order_menu_selection == "9":
-                self.__manager.gotoClass("mainmenu")
+                self.__manager.gotoClass("ordermenu")
