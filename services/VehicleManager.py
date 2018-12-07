@@ -9,7 +9,7 @@ BRAND = 3
 PRICE = 4
 CAR_TYPE = 5
 VEHICLE_FILE = "cars.csv"
-class VehicleManger(object):
+class VehicleManager(object):
     def __init__(self):
 
         self.__Vehicles_Data = GetData(VEHICLE_FILE).readData()
