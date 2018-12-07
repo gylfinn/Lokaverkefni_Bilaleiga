@@ -21,7 +21,7 @@ from ui.CustMenu.RegisterCustomer import RegisterCustomer
 from ui.CarMenu.CarMenu import CarMenu
 from ui.CarMenu.CarAdministrationMenu.CarAdministrationMenu import CarAdministrationMenu
 from ui.CarMenu.CarAdministrationMenu.DeregisterCar import DeregisterCar
-from ui.CarMenu.CarAdministrationMenu.RegisterNewCar import RegisterNewCa
+from ui.CarMenu.CarAdministrationMenu.RegisterNewCar import RegisterNewCar
 
 
 EMPTY = "EMPTY"
@@ -118,7 +118,7 @@ class MenuManager:
         elif self.__location == CHANGEORDER:
             self.__change_order.changeOrder()
         elif self.__location == CHARGEBACKORDER:
-            self.__chargeback_order.changebackOrder()
+            self.__chargeback_order.chargebackOrder()
         elif self.__location == CARMENU:
             self.__car_menu.carMenu()
         elif self.__location == CARADMINISTRATIONMENU:
