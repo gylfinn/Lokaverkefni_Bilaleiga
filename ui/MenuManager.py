@@ -1,4 +1,3 @@
-
 from ui.OrderMenu.OrderMenu import OrderMenu
 from ui.MainMenu import MainMenu
 from ui.LoginMenu import LoginMenu
@@ -9,6 +8,7 @@ from ui.OrderMenu.UpcomingOrders import UpcomingOrders
 from ui.OrderMenu.NewOrder import NewOrder
 from ui.CustMenu.CustMenu import CustMenu
 from ui.CustMenu.LookupCustomerMenu.LookupCustomerMenu import LookupCustomerMenu
+from ui.CustMenu.LookupCustomerMenu.UpdateInformation import UpdateInformation
 
 EMPTY = "EMPTY"
 LOGINMENU = "loginmenu"
@@ -18,7 +18,8 @@ LOOKUPORDERMENU = "lookupordermenu"
 UPCOMINGORDERS = "upcomingorders"
 NEWORDER = "neworder"
 CUSTMENU = "custmenu"
-LOOKUPCUSTOMERMENU = "lookupcostumermenu"
+LOOKUPCUSTOMERMENU = "lookupcustomermenu"
+UPDATEINFORMATION = "updateinformation"
 
 #Menu manager sem sér um að ferðast á milli UI klasa.
 #Er kallað á hann með location sem er klasinn sem á að fara í
@@ -36,6 +37,7 @@ class MenuManager:
         self.__VehicleManager = VehicleManger()
         self.__OrderManager = OrderManager()
         self.__lookup_customer_menu = LookupCustomerMenu(self)
+        self.__update_information = UpdateInformation(self)
 
 
         #--Start up at login loaction--
@@ -43,10 +45,13 @@ class MenuManager:
 
     def isAdmin(self):
         return self.__login_menu.isadmin
+
     def getVehicleManger(self):
         return self.__VehicleManager
+
     def getOrderManager(self):
         return self.__OrderManager
+
     def gotoClass(self, location):
         self.__last_location = self.__location
         self.__location = location
@@ -67,4 +72,6 @@ class MenuManager:
             self.__lookup_customer_menu.LookupCustomerMenu()
         elif self.__location == CUSTMENU:
             self.__cust_menu.customerMenu()
+        elif self.__location == UPDATEINFORMATION:
+            self.__location.UpdateInformation()
 

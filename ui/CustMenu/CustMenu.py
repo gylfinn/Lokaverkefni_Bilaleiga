@@ -19,7 +19,8 @@ class CustMenu:
             os.system('cls')
 
             if selection == "1":
-                customer = self.__customer.lookUpCustomer()
+                SSN = input("SSN: ")
+                customer = self.__customer.lookUpCustomer(SSN)
                 if customer != None:
                     self.__manager.gotoclass("lookupcustomermenu")
                     #LookupCustomerMenu(self, customer)
