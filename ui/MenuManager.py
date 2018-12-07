@@ -18,7 +18,7 @@ from ui.CustMenu.LookupCustomerMenu.UpdateInformation import UpdateInformation
 from ui.CustMenu.LookUpCustomer import LookUpCustomer
 from ui.CustMenu.RegisterCustomer import RegisterCustomer
 
-from ui.CarMenu.CarmMenu import CarMenu
+from ui.CarMenu.CarMenu import CarMenu
 from ui.CarMenu.CarAdministrationMenu.CarAdministrationMenu import CarAdministrationMenu
 from ui.CarMenu.CarAdministrationMenu.DeregisterCar import DeregisterCar
 from ui.CarMenu.CarAdministrationMenu.RegisterNewCar import RegisterNewCa
