@@ -33,14 +33,14 @@ class VehicleManager(object):
             self.__Vehicles.append(car)
 
     def loadAvailableVehicles(self):
-        for Veh in self.__Vehicles:
-            if not Veh.getRented():
-                self.__AvailableVehicles.append(Veh)
+        for Vehicle in self.__Vehicles_Data:
+            if Vehicle[1] == 'False':
+                self.__AvailableVehicles.append(Vehicle)
 
     def loadRentedVehicles(self):
-        for Veh in self.__Vehicles:
-            if Veh.getRented():
-                self.__VehiclesInRent.append(Veh)
+        for Vehicle in self.__Vehicles_Data:
+            if Vehicle[1] == 'True':
+                self.__VehiclesInRent.append(Vehicle)
 
     def registerNewVehicle(self, registration_number, rented, model_year, brand, price, car_type):
         newVehicle = Vehicle(registration_number, model_year, rented, brand, price, car_type)

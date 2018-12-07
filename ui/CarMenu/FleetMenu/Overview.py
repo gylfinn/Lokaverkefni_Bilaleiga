@@ -14,7 +14,7 @@ class Overview:
             print("\n9. Back")
             upcoming_order_menu_selection = input()
             if upcoming_order_menu_selection == "9":
-                self.__manager.gotoClass("ordermenu")
+                self.__manager.gotoClass("fleetmenu")
 
 
                 #Vehicles = self.__manager.getOrderManager().getOrders(True)

@@ -60,3 +60,5 @@ Sameina virkni í öllu þessu og hafa þetta BARA Í models.
 
 ● Villumeðhöndlun á innslætti á kennitölu, dagsetningum og öðrum lykilgildum
     Alveg eftir
+
+● Finna út hvernig True/False í cars.csv verði bool en ekki string  

@@ -40,7 +40,7 @@ class Vehicle(object):
     def getType(self):
         return self.__type
     def __str__(self):
-        return "Model year: {}, Registration number: {},Rented: {},Brand: {},Price {}".format(self.getRegistrationNum(), self.getModelYear(), self.getRented(), self.getBrand(), self.getPrice())
+        return "Model year: {}, Registration number: {},Rented: {},Brand: {},Price {}".format(self.getModelYear(), self.getRegistrationNum(), self.getRented(), self.getBrand(), self.getPrice())
 
 '''class Sedan(Vehicle):
     def __init__(self, registration_num, model_year, brand, price):

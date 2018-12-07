@@ -1,7 +1,7 @@
 from ui.MainMenu import MainMenu
 from ui.LoginMenu import LoginMenu
 
-from services.VehicleManager import VehicleManger
+from services.VehicleManager import VehicleManager
 from services.OrderManager import OrderManager
 
 from ui.OrderMenu.OrderMenu import OrderMenu
@@ -15,18 +15,21 @@ from ui.OrderMenu.NewOrder import NewOrder
 from ui.CustMenu.CustMenu import CustMenu
 from ui.CustMenu.LookupCustomerMenu.LookupCustomerMenu import LookupCustomerMenu
 from ui.CustMenu.LookupCustomerMenu.UpdateInformation import UpdateInformation
-from ui.CustMenu.LookUpCustomer import LookUpCustomer
+# from ui.CustMenu.LookUpCustomer import LookUpCustomer
 from ui.CustMenu.RegisterCustomer import RegisterCustomer
 
 from ui.CarMenu.CarMenu import CarMenu
 from ui.CarMenu.CarAdministrationMenu.CarAdministrationMenu import CarAdministrationMenu
 from ui.CarMenu.CarAdministrationMenu.DeregisterCar import DeregisterCar
 from ui.CarMenu.CarAdministrationMenu.RegisterNewCar import RegisterNewCar
-
+from ui.CarMenu.FleetMenu.FleetMenu import FleetMenu
+from ui.CarMenu.FleetMenu.Overview import Overview 
+from ui.CarMenu.FleetMenu.Available import Available
+from ui.CarMenu.FleetMenu.CurrentRentals import CurrentRentals
 
 EMPTY = "EMPTY"
 CANCELORDER = "cancelorder"
-CHANGEORDER = "changeorder"
+CHANGEORDER = "changeorder" 
 CHARGEBACKORDER = "chargebackorder"
 LOOKUPCUSTOMER = "lookupcustomer"
 REGISTERCUSTOMER = "registercustomer"
@@ -40,6 +43,7 @@ CUSTMENU = "custmenu"
 LOOKUPCUSTOMERMENU = "lookupcustomermenu"
 UPDATEINFORMATION = "updateinformation"
 CARMENU = "carmenu"
+FLEETMENU = "fleetmenu"
 CARADMINISTRATIONMENU = "caradministration"
 DEREGISTERCAR = "deregistercar"
 REGISTERNEWCAR = "registernewcar"
@@ -60,11 +64,11 @@ class MenuManager:
         self.__lookup_order_menu = LookupOrderMenu.LookupOrderMenu(self)
         self.__upcoming_orders = UpcomingOrders.UpcomingOrders(self)
         self.__new_order = NewOrder.NewOrder(self)
-        self.__VehicleManager = VehicleManger()
+        self.__VehicleManager = VehicleManager()
         self.__OrderManager = OrderManager()
         self.__lookup_customer_menu = LookupCustomerMenu(self)
         self.__update_information = UpdateInformation(self)
-        self.__look_up_customer = LookUpCustomer(self)
+        # self.__look_up_customer = LookUpCustomer(self)
         self.__register_customer = RegisterCustomer(self)
         self.__cancel_order = CancelOrder(self)
         self.__change_order = ChangeOrder(self)
@@ -73,6 +77,10 @@ class MenuManager:
         self.__car_administration_menu = CarAdministrationMenu(self)
         self.__register_new_car_menu = RegisterNewCar(self)
         self.__deregister_car_menu = DeregisterCar(self)
+        self.__fleet_menu = FleetMenu(self)
+        self.__available = Available(self)
+        self.__current_rentals = CurrentRentals(self)
+        self.__overview = Overview(self)
 
 
         #--Start up at login loaction--
@@ -81,7 +89,7 @@ class MenuManager:
     def isAdmin(self):
         return self.__login_menu.isadmin
 
-    def getVehicleManger(self):
+    def getVehicleManager(self):
         return self.__VehicleManager
 
     def getOrderManager(self):
@@ -103,16 +111,16 @@ class MenuManager:
             self.__upcoming_orders.upcomingOrders()
         elif self.__location == NEWORDER:
             self.__new_order.newOrder()
-        elif self.__location == LOOKUPCUSTOMERMENU:
-            self.__lookup_customer_menu.lookupCustomerMenu()
+        # elif self.__location == LOOKUPCUSTOMERMENU:
+            # self.__lookup_customer_menu.lookupCustomerMenu()
         elif self.__location == CUSTMENU:
             self.__cust_menu.customerMenu()
-        elif self.__location == UPDATEINFORMATION:
-            self.__update_information.updateInformation()
+        # elif self.__location == UPDATEINFORMATION:
+            # self.__update_information.updateInformation()
         elif self.__location == REGISTERCUSTOMER:
             self.__register_customer.registerCustomer()
-        elif self.__location == LOOKUPCUSTOMER:
-            self.__look_up_customer.lookupCustomer()
+        # elif self.__location == LOOKUPCUSTOMER:
+        #     self.__look_up_customer.lookupCustomer()
         elif self.__location == CANCELORDER:
             self.__cancel_order.cancelOrder()
         elif self.__location == CHANGEORDER:
@@ -127,3 +135,11 @@ class MenuManager:
             self.__register_new_car_menu.registerNewCar()
         elif self.__location == DEREGISTERCAR:
             self.__deregister_car_menu.deregisterCar()
+        elif self.__location == FLEETMENU:
+            self.__fleet_menu.fleetMenu()
+        elif self.__location == AVAILABLE: #
+            self.__available.available()   # eftir að gera
+        elif self.__location == OVERVIEW:  # eftir að gera
+            self.__overview.overview()     # eftir
+        elif self.__location == CURRENTRENTALS: # eftir
+            self.__current_rentals.currentRentals() # eftir 

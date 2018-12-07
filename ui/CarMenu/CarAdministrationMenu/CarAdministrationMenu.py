@@ -19,4 +19,4 @@ class CarAdministrationMenu:
             elif car_menu_selection == "2":
                 self.__manager.gotoClass("deregistercar")
             elif car_menu_selection =="9":
-                self.__manager.gotoClass("mainmenu")
+                self.__manager.gotoClass("carmenu")
