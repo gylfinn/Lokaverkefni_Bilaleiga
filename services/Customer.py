@@ -2,6 +2,7 @@ from repo.GetCustomerData import GetCustomerData
 from services.servicehelpers.GetCustomerInfo import GetCustomerInfo
 import os
 
+#Ætti að vera undir Models
 class Customer:
     def __init__(self):
         self.__customer_data = GetCustomerData()

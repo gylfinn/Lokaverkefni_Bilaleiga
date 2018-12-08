@@ -1,5 +1,6 @@
 from repo.GetOrderData import GetOrderData
 
+#Ætti að vera undir Models en er þegar komið 
 class Order:
     def __init__(self):
         self.__order = GetOrderData()
