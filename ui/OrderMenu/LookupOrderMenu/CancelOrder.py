@@ -18,7 +18,7 @@ class CancelOrder:
             print("9. Back")
             cancel_order_menu_selection = input()
             if cancel_order_menu_selection == "9":
-                self._manager.gotoClass("ordermenu")
+                self._manager.gotoClass("lookupordermenu")
             elif cancel_order_menu_selection == "1":
                 #call service class here
                 pass

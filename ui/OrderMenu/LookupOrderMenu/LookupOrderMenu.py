@@ -27,4 +27,4 @@ class LookupOrderMenu:
                 self.__manager.gotoClass("")
                 #calls chargeback order service class
             elif lookup_order_selection == "9":
-                self.__manager.gotoClass("lookupordermenu")
+                self.__manager.gotoClass("ordermenu")
