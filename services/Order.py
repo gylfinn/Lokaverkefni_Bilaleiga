@@ -15,5 +15,5 @@ class Order:
                 pass
         return user_list
     
-    def registerOrder(self, orderid, carregistrationnumber, customerssn, datefrom, dateto, totalprice):
-        self.__order_data.registerOrder(orderid, carregistrationnumber, customerssn, datefrom, dateto, totalprice)
+    def registerOrder(self, orderid, car_regnum, customer_ssn, date_from, date_to, total_price):
+        self.__order.newOrder(orderid, car_regnum, customer_ssn, date_from, date_to, total_price)

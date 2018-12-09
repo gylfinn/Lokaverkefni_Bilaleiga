@@ -21,7 +21,7 @@ class NewOrder:
             date_from = input("Date From: ")
             date_to = input("Date To: ")
             total_price = input("Total price: ")
-            self.__order.registerOrder(orderid,carregistrationnumber,customerssn,datefrom,dateto,totalprice)
+            self.__order.registerOrder(orderid, car_regnum, customer_ssn, date_from, date_to, total_price)
             print("9. Back")
             upcoming_order_menu_selection = input()
             if upcoming_order_menu_selection == "9":
