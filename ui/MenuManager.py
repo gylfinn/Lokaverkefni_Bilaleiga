@@ -13,9 +13,9 @@ from ui.OrderMenu.UpcomingOrders import UpcomingOrders
 from ui.OrderMenu.NewOrder import NewOrder
 
 from ui.CustMenu.CustMenu import CustMenu
-from ui.CustMenu.LookupCustomerMenu.LookupCustomerMenu import LookupCustomerMenu
+from ui.CustMenu.LookupCustomerMenu.LookupCustomerMenu import LookUpCustomerMenu
 from ui.CustMenu.LookupCustomerMenu.UpdateInformation import UpdateInformation
-# from ui.CustMenu.LookUpCustomer import LookUpCustomer
+from ui.CustMenu.LookupCustomer import LookUpCustomer
 from ui.CustMenu.RegisterCustomer import RegisterCustomer
 
 from ui.CarMenu.CarMenu import CarMenu
@@ -66,9 +66,9 @@ class MenuManager:
         self.__new_order = NewOrder.NewOrder(self)
         self.__VehicleManager = VehicleManager()
         self.__OrderManager = OrderManager()
-        self.__lookup_customer_menu = LookupCustomerMenu(self)
+        self.__lookup_customer_menu = LookUpCustomerMenu(self)
         self.__update_information = UpdateInformation(self)
-        # self.__look_up_customer = LookUpCustomer(self)
+        self.__look_up_customer = LookUpCustomer(self)
         self.__register_customer = RegisterCustomer(self)
         self.__cancel_order = CancelOrder(self)
         self.__change_order = ChangeOrder(self)
