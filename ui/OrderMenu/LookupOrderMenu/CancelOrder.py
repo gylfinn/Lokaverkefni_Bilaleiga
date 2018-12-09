@@ -6,22 +6,22 @@ import os
 
 class CancelOrder:
     def __init__(self, manager):
-        self._manager = manager
+        self.__manager = manager
     def cancelOrder(self):
         os.system('cls')
         cancel_order_menu_selection = ""
+        order = self.__manager.getMetadata()
         while(cancel_order_menu_selection !="9"):
-            print("BACKEND FUNCTION MISSIN HERE")
-            print("Are you sure you want to cancel %ORDER ID?%")
+            print(order)
+            print("Are you sure you want to cancel this order?")
             print("1. Yes")
             print("2. No")
             print("9. Back")
             cancel_order_menu_selection = input()
             if cancel_order_menu_selection == "9":
-                self._manager.gotoClass("lookupordermenu")
+                self.__manager.gotoClass("lookupordermenu")
             elif cancel_order_menu_selection == "1":
-                #call service class here
-                pass
+                self.__manager.getOrderManager().removeOrder(order.getOrderid())
+                self.__manager.gotoClass("lookupordermenu")
             elif cancel_order_menu_selection == "2":
-                #call service class here
-                pass
+                self.__manager.gotoClass("lookupordermenu")

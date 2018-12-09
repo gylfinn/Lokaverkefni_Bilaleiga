@@ -92,9 +92,12 @@ class MenuManager:
 
     def getMetadata(self):
         return self.__metadata
+    
+    def setMetadata(self, new_data):
+        self.__metadata = new_data
         
-    def setMetadata(self, data):
-        self.__metadata = data
+    def clearMetadata(self):
+        self.__metadata = None
 
     def getVehicleManager(self):
         return self.__VehicleManager

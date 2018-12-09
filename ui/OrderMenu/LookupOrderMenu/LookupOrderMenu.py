@@ -11,7 +11,8 @@ class LookupOrderMenu:
     def lookupOrderMenu(self):
         os.system('cls')
         lookup_order_selection = ""
-        if not self.__manager.getMetadata():
+        order = self.__manager.getMetadata()
+        if order == None:
             order_id = input("Order ID: ")
             order = self.__manager.getOrderManager().findOrder(order_id)
             self.__manager.setMetadata(order)
@@ -28,9 +29,8 @@ class LookupOrderMenu:
                 self.__manager.gotoClass("changeorder")
             elif lookup_order_selection == "2":
                 self.__manager.gotoClass("cancelorder")
-                #Calls cancel order service class
             elif lookup_order_selection == "3":    
                 self.__manager.gotoClass("chargebackorder")
-                #calls chargeback order service class
             elif lookup_order_selection == "9":
+                self.__manager.clearMetadata() #Setja Metadata aftur í None svo engir lúðar fari að nota það aftur xD:PXOXOXOXOX
                 self.__manager.gotoClass("ordermenu")

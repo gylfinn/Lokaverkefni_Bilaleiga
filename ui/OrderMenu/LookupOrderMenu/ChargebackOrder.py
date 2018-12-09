@@ -14,9 +14,9 @@ class ChargebackOrder:
         order = self.__manager.getMetadata() #orderiið sem var flett upp i lookuporder a undan
         while(chargeback_order_menu_selection !="9"):
             print("Chargeback order:", order.getOrderid())
-            print("SSN: ", order.getCustomerSSN())
-            print("Date from: ", order.getDateFrom())
-            print("Date to: ", order.getDateTo())
+            print("SSN:", order.getCustomerSSN())
+            print("Date from:", order.getDateFrom())
+            print("Date to:", order.getDateTo())
             print("Car Registration Number: ", order.getCarRegistration())
             print("1. Confirm chargeback ?")
             print("9. Back")
@@ -25,4 +25,3 @@ class ChargebackOrder:
                 self.__manager.gotoClass("lookupordermenu")
             elif chargeback_order_menu_selection == "1":
                 self.__manager.getOrderManager().removeOrder(int(order.getOrderid()))
-                #call service class here

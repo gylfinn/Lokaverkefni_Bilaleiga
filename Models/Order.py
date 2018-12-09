@@ -12,14 +12,25 @@ class Order():
         return self.__order_id
     def getCarRegistration(self):
         return self.__car_registration_number
+    def setCarRegistration(self, new_car_reg):
+        self.__car_registration_number = new_car_reg
     def getCustomerSSN(self):
         return self.__customer_ssn
+    def setCustomerSSN(self, new_ssn):
+        self.__customer_ssn = new_ssn
     def getDateFrom(self):
         return self.__date_from
+    def setDateFrom(self, new_date):
+        self.__date_from = new_date
     def getDateTo(self):
         return self.__date_to
+    def setDateTo(self, new_date):
+        self.__date_to = new_date
     def getPrice(self):
         return self.__total_price
+    def setPrice(self, new_price):
+        self.__total_price = new_price
+
     def __gt__(self, other):
         return self.__date_from > other.date_from
     def __repr__(self):
