@@ -17,7 +17,7 @@ class LookupOrderMenu:
             self.__manager.setMetadata(order)
 
         while(lookup_order_selection !="9"):
-            print("Order info displayed here")
+            print(order)
             print("1. Change order")
             print("2. Cancel Order")
             print("3. Chargeback Order")
@@ -25,12 +25,12 @@ class LookupOrderMenu:
             lookup_order_selection = input()
 
             if lookup_order_selection == "1":
-                self.__manager.gotoClass("")
+                self.__manager.gotoClass("changeorder")
             elif lookup_order_selection == "2":
-                self.__manager.gotoClass("")
+                self.__manager.gotoClass("cancelorder")
                 #Calls cancel order service class
             elif lookup_order_selection == "3":    
-                self.__manager.gotoClass("")
+                self.__manager.gotoClass("chargebackorder")
                 #calls chargeback order service class
             elif lookup_order_selection == "9":
                 self.__manager.gotoClass("ordermenu")
