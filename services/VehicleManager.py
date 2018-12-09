@@ -73,5 +73,5 @@ class VehicleManager(object):
         return self.__VehiclesInRent
 
     def Save(self):
-        self.__DataSaver.WriteVehicleData(self.__Vehicles_Data)
+        self.__DataSaver.writeVehicleData(self.__Vehicles_Data)
         
