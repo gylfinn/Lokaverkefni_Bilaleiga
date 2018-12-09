@@ -55,8 +55,8 @@ class VehicleManager(object):
             self.__Vehicles.pop(vehid)
             self.__Vehicles_Data.pop(vehid)
             self.Save()
-        else:
-            return None
+            return True
+        return False
             
     def findVehicleID(self, registration_number):
         for index, vehicle in enumerate(self.__Vehicles):
