@@ -35,6 +35,7 @@ class OrderManager(object):
         order_id -= 1 # Ekki nice en works
         self.__Orders.pop(order_id)
         self.__Orders_Data.pop(order_id)
+        self.Save()
     
     def getOrders(self, by_dates = False):
         if by_dates:
