@@ -23,7 +23,7 @@ class ChangeOrder:
             print("Change Date to:")
             order.setDateTo(input() or order.getDateTo())
             print("Car Registration Number:")
-            order.setCarRegistration(input or order.getCarRegistration())
+            order.setCarRegistration(input() or order.getCarRegistration())
             print(order)
             print("1. Confirm")
             print("9. Back")

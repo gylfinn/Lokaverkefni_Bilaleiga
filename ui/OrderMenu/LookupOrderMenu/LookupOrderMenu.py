@@ -1,4 +1,5 @@
 import os
+from colorama import Fore
 from Models.Order import Order
 
 #Þessi klasi þarf að kalla á klasa í services sem leitar að order
@@ -12,13 +13,13 @@ class LookupOrderMenu:
         os.system('cls')
         lookup_order_selection = ""
         order = self.__manager.getMetadata()
-        if order == None:
+        while(order == None):
             order_id = input("Order ID: ")
             order = self.__manager.getOrderManager().findOrder(order_id)
             self.__manager.setMetadata(order)
 
         while(lookup_order_selection !="9"):
-            print(order)
+            print(Fore.YELLOW, order, Fore.WHITE)
             print("1. Change order")
             print("2. Cancel Order")
             print("3. Chargeback Order")

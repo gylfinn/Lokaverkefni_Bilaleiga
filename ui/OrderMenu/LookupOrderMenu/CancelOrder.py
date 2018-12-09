@@ -1,4 +1,5 @@
 import os
+from colorama import Fore
 
 # Þessi klasi spyr notandann hvort hann vilji confirma cancel order eða ekki
 # ef hann velur YES þá er callað í service klasa sem eyðir orderinu
@@ -12,7 +13,7 @@ class CancelOrder:
         cancel_order_menu_selection = ""
         order = self.__manager.getMetadata()
         while(cancel_order_menu_selection !="9"):
-            print(order)
+            print(Fore.YELLOW, order, Fore.WHITE)
             print("Are you sure you want to cancel this order?")
             print("1. Yes")
             print("2. No")
