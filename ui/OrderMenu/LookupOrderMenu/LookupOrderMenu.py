@@ -1,4 +1,5 @@
 import os
+from Models.Order import Order
 
 #Þessi klasi þarf að kalla á klasa í services sem leitar að order
 #og sýnir svo upplýsingar um þá order og býður notanda að velja 1,2,3
@@ -10,6 +11,11 @@ class LookupOrderMenu:
     def lookupOrderMenu(self):
         os.system('cls')
         lookup_order_selection = ""
+        if not self.__manager.getMetadata():
+            order_id = input("Order ID: ")
+            order = self.__manager.getOrderManager().findOrder(order_id)
+            self.__manager.setMetadata(order)
+
         while(lookup_order_selection !="9"):
             print("Order info displayed here")
             print("1. Change order")

@@ -2,6 +2,7 @@ import csv
 class SaveData():
     def __init__(self, file_name):
         self.__file_name = "./data/" + file_name
+        
     def writeOrdersData(self, Orders):
         file = open(self.__file_name, "w", newline = '')
         file.write("orderid,carregistrationnumber,customerssn,datefrom,dateto,totalprice\n")
@@ -9,6 +10,7 @@ class SaveData():
         for order in Orders:
             writer.writerow(order)
         file.close()
+
     def writeVehicleData(self, vehicles):
         file = open(self.__file_name, "w", newline = '')
         file.write("registrationnumber,rented,modelyear,brand,price,type\n")

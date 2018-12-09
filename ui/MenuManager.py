@@ -81,6 +81,7 @@ class MenuManager:
         self.__available = Available(self)
         self.__current_rentals = CurrentRentals(self)
         self.__overview = Overview(self)
+        self.__metadata = None
 
 
         #--Start up at login loaction--
@@ -88,6 +89,12 @@ class MenuManager:
 
     def isAdmin(self):
         return self.__login_menu.isadmin
+
+    def getMetadata(self):
+        return self.__metadata
+        
+    def setMetadata(self, data):
+        self.__metadata = data
 
     def getVehicleManager(self):
         return self.__VehicleManager

@@ -11,6 +11,8 @@ class LookUpCustomerMenu:
             selection = ""
             SSD = input("Customer SSD:")
             customer = self.__customer.lookUpCustomer(SSD)
+            self.__manager.setMetadata(customer)
+            
             os.system('cls')
             while (selection != "9"):
                 print(customer)
