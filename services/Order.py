@@ -4,7 +4,7 @@ from repo.GetOrderData import GetOrderData
 class Order:
     def __init__(self):
         self.__order = GetOrderData()
-        self.__order_data = self.__order.readCustomerData()
+        self.__order_data = self.__order.readOrderData()
 
     def findUserHistory(self, customerssn):
         user_list = []
@@ -14,3 +14,6 @@ class Order:
             else:
                 pass
         return user_list
+    
+    def registerOrder(self, orderid, carregistrationnumber, customerssn, datefrom, dateto, totalprice):
+        self.__order_data.registerOrder(orderid, carregistrationnumber, customerssn, datefrom, dateto, totalprice)
