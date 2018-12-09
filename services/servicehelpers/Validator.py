@@ -30,3 +30,38 @@ class Validator:
             return valid
 
         return valid
+    
+    def ValidateOrderId(self, orderid):
+        valid = True
+
+        try:
+            int(orderid)
+        except:
+            valid = False
+            return valid
+    
+    def ValidateCarNumber(self, carnum)
+        valid = True
+
+        try:
+            int(carnum)
+        except:
+            valid = False
+            return valid
+
+        #Check if first 2 are string
+        #if int() cast fails then it is a string
+        try:
+            int(carnum[:2])
+            valid = False
+            return valid
+        except:
+            pass
+
+        try:
+            int(carnum[-2:])
+        except:
+            valid = False
+            return valid
+
+        return valid
