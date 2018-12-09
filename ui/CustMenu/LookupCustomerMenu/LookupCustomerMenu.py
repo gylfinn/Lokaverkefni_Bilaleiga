@@ -1,7 +1,7 @@
 import os
 from services.Customer import Customer
 from services.Order import Order
-class LookupCustomerMenu:
+class LookUpCustomerMenu:
     def __init__(self, manager):
         self.__manager = manager
         self.__customer = Customer()
@@ -24,15 +24,15 @@ class LookupCustomerMenu:
 
                 if selection == "1":
                     self.__manager.gotoClass("updateinformation", customer)
-
                 elif selection == "2":
                     customer_ssn = customer[1]
                     user_history = self.__order.findUserHistory(customer_ssn)
                     for line in user_history:
                         print(line,end="\n")
-                
                 elif selection == "3":
                     ssn = customer[1]
                     self.__customer.deleteCustomer(customer, ssn)
                     customer = None
                     return customer
+                elif selection == "9":
+                    self.__manager.gotoClass("custmenu")
