@@ -15,7 +15,7 @@ class GetOrderData:
     def newOrder(self, orderid, carregistrationnumber, customerssn, datefrom, dateto, totalprice):
         with open ("./data/orders.csv", "a+", newline="") as order_file:
             order_writer = csv.writer(order_file, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
-            order_writer.writerow([orderid, carregistrationnumber, customerssn, datefrom, dateto, totalpricev])
+            order_writer.writerow([orderid, carregistrationnumber, customerssn, datefrom, dateto, totalprice])
 
     def changeCustomerInfo(self, order, name, replace_index):
         new_list = []
