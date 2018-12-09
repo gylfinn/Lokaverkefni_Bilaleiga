@@ -19,7 +19,7 @@ class Vehicle(object):
     def setModelYear(self, new_model_year):
         self.__model_year = new_model_year
     
-    def getRented(self):
+    def isRented(self):
         return self.__rented
     
     def setRented(self, new_rented):
@@ -40,17 +40,4 @@ class Vehicle(object):
     def getType(self):
         return self.__type
     def __str__(self):
-        return "Model year: {}, Registration number: {},Rented: {},Brand: {},Price {}".format(self.getModelYear(), self.getRegistrationNum(), self.getRented(), self.getBrand(), self.getPrice())
-
-'''class Sedan(Vehicle):
-    def __init__(self, registration_num, model_year, brand, price):
-        super().__init__(registration_num, model_year, brand, price)
-
-class Hatchback(Vehicle):
-    def __init__(self, registration_num, model_year, brand, price):
-        super().__init__(registration_num, model_year, brand, price)
-
-class SUV(Vehicle):
-    def __init__(self, registration_num, model_year, brand, price):
-        super().__init__(registration_num, model_year, brand, price)'''
-
+        return "Model year: {}, Registration number: {},Rented: {},Brand: {},Price {}".format(self.getModelYear(), self.getRegistrationNum(), self.isRented(), self.getBrand(), self.getPrice())

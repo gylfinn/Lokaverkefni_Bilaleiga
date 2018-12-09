@@ -60,4 +60,4 @@ class OrderManager(object):
         return None #Ef ekkert order er found þá returnar hann none
 
     def Save(self):
-        self.__DataSaver.WritOrdersData(self.__Orders_Data)
+        self.__DataSaver.writeOrdersData(self.__Orders_Data)

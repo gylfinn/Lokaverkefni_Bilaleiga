@@ -24,22 +24,22 @@ class VehicleManager(object):
     def loadVehicles(self):
         for line in self.__Vehicles_Data:
             regnum = line[REGISTRATION_NUMBER]
-            rented = line[RENTED]
-            model_year = line[MODEL_YEAR]
+            rented = bool(line[RENTED])
+            model_year = int(line[MODEL_YEAR])
             brand = line[BRAND]
-            price = line[PRICE]
-            car_type = line[CAR_TYPE]
+            price = int(line[PRICE])
+            car_type = int(line[CAR_TYPE])
             car = Vehicle(regnum, model_year, rented, brand, price, car_type)
             self.__Vehicles.append(car)
 
     def loadAvailableVehicles(self):
-        for Vehicle in self.__Vehicles_Data:
-            if Vehicle[1] == 'False':
+        for vehicle in self.__Vehicles:
+            if not vehicle.isRented():
                 self.__AvailableVehicles.append(Vehicle)
 
     def loadRentedVehicles(self):
-        for Vehicle in self.__Vehicles_Data:
-            if Vehicle[1] == 'True':
+        for vehicle in self.__Vehicles:
+            if vehicle.isRented():
                 self.__VehiclesInRent.append(Vehicle)
 
     def registerNewVehicle(self, registration_number, rented, model_year, brand, price, car_type):
