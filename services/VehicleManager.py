@@ -24,7 +24,10 @@ class VehicleManager(object):
     def loadVehicles(self):
         for line in self.__Vehicles_Data:
             regnum = line[REGISTRATION_NUMBER]
-            rented = bool(line[RENTED])
+            if line[RENTED] == 'True':
+                rented = True
+            else:
+                rented = False
             model_year = int(line[MODEL_YEAR])
             brand = line[BRAND]
             price = int(line[PRICE])
@@ -35,18 +38,18 @@ class VehicleManager(object):
     def loadAvailableVehicles(self):
         for vehicle in self.__Vehicles:
             if not vehicle.isRented():
-                self.__AvailableVehicles.append(Vehicle)
+                self.__AvailableVehicles.append(vehicle)
 
     def loadRentedVehicles(self):
         for vehicle in self.__Vehicles:
             if vehicle.isRented():
-                self.__VehiclesInRent.append(Vehicle)
+                self.__VehiclesInRent.append(vehicle)
 
     def registerNewVehicle(self, registration_number, rented, model_year, brand, price, car_type):
         newVehicle = Vehicle(registration_number, model_year, rented, brand, price, car_type)
         self.__Vehicles.append(newVehicle)
         self.__Vehicles_Data.append([registration_number, rented, model_year, brand, price, car_type])
-        self.Save() #Save-a í hvert sinn sem við bætum við nýjum bíl
+        self.save() #Save-a í hvert sinn sem við bætum við nýjum bíl
         return newVehicle
 
     def deregisterVehicle(self, registration_number):
@@ -54,9 +57,9 @@ class VehicleManager(object):
         if vehid:
             self.__Vehicles.pop(vehid)
             self.__Vehicles_Data.pop(vehid)
-            self.Save()
-            return True
-        return False
+            self.save()
+        else:
+            return None
             
     def findVehicleID(self, registration_number):
         for index, vehicle in enumerate(self.__Vehicles):
@@ -72,6 +75,6 @@ class VehicleManager(object):
     def getRentedVehicles(self):
         return self.__VehiclesInRent
 
-    def Save(self):
+    def save(self):
         self.__DataSaver.writeVehicleData(self.__Vehicles_Data)
         

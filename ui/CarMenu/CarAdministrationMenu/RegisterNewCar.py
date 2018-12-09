@@ -27,7 +27,7 @@ class RegisterNewCar:
             print("Model year of new Vehicle: {}".format(model_year))
             print("Brand of Vehicle: {}".format(vehicle_brand))
             print("Type of Vehicle (1 for Hatchback, 2 for Sedan, 3 for SUV): {}\n".format(vehicle_type))
-            confirmation = input("Enter 8 to Confirm or 9 to Cancel")
+            confirmation = input("Enter 8 to Confirm or 9 to Cancel:\n")
             if confirmation == "8":
                 vehicle_price = 0
                 rented = False
@@ -38,6 +38,11 @@ class RegisterNewCar:
                 elif vehicle_type == "3":
                     vehicle_price = 300
                 self.__manager.getVehicleManager().registerNewVehicle(vehicle_reg_num, rented, model_year, vehicle_brand, vehicle_price, vehicle_type)
-
+                os.system('cls')
+                print("Car Registered Successfully")
             if confirmation == "9":
+                self.__manager.gotoClass("caradministrationmenu")
+            print("Press Any button to Register a new Vehicle or 9 to go Back:\n")
+            action = input()
+            if action == "9":
                 self.__manager.gotoClass("caradministrationmenu")
