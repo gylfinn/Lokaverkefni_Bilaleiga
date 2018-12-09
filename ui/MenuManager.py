@@ -111,16 +111,16 @@ class MenuManager:
             self.__upcoming_orders.upcomingOrders()
         elif self.__location == NEWORDER:
             self.__new_order.newOrder()
-        # elif self.__location == LOOKUPCUSTOMERMENU:
-            # self.__lookup_customer_menu.lookupCustomerMenu()
+        elif self.__location == LOOKUPCUSTOMERMENU:
+            self.__lookup_customer_menu.customerMenuSelection()
         elif self.__location == CUSTMENU:
             self.__cust_menu.customerMenu()
         # elif self.__location == UPDATEINFORMATION:
             # self.__update_information.updateInformation()
         elif self.__location == REGISTERCUSTOMER:
             self.__register_customer.registerCustomer()
-        # elif self.__location == LOOKUPCUSTOMER:
-        #     self.__look_up_customer.lookupCustomer()
+        elif self.__location == LOOKUPCUSTOMER:
+            self.__look_up_customer.lookUpCustomer()
         elif self.__location == CANCELORDER:
             self.__cancel_order.cancelOrder()
         elif self.__location == CHANGEORDER:
