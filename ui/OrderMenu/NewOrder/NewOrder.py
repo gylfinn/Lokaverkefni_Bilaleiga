@@ -1,4 +1,6 @@
 import os
+from services.Order import Order
+from services.servicehelpers.Validator import Validator
 
 #Þessi klasi kallar tekur við info um nýtt order, sendir það svo til services sem skrifar í Repo layer
 #Á líka að geta tekið við daga fjölda og týpu af bíl og sent til services sem reiknar út
@@ -6,13 +8,21 @@ import os
 
 class NewOrder:
     def __init__(self, manager):
-        self._manager = manager
+        self.__manager = manager
+        self.__order = Order()
+
     def newOrder(self):
         os.system('cls')
         new_order_menu_selection = ""
         while(new_order_menu_selection !="9"):
-            print("New order is recieved here, needs work")
+            orderid = input("Order Id: ")
+            car_regnum = input("Car Registration Number: ")
+            customer_ssn = input("Customer SSN: ")
+            date_from = input("Date From: ")
+            date_to = input("Date To: ")
+            total_price = input("Total price: ")
+            self.__order.registerOrder(orderid,carregistrationnumber,customerssn,datefrom,dateto,totalprice)
             print("9. Back")
             upcoming_order_menu_selection = input()
             if upcoming_order_menu_selection == "9":
-                self._manager.gotoClass("ordermenu")
+                self.__manager.gotoClass("ordermenu")
