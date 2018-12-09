@@ -15,9 +15,8 @@ class CarMenu:
             car_menu_selection = input()
             os.system('cls')
             if car_menu_selection == "1":
-                self.__manager.gotoClass("caradministration")
+                self.__manager.gotoClass("caradministrationmenu")
             elif car_menu_selection == "2":
                 self.__manager.gotoClass("fleetmenu")
             elif car_menu_selection =="9":
                 self.__manager.gotoClass("mainmenu")
-                
