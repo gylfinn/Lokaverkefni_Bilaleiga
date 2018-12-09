@@ -14,6 +14,18 @@
 Customer og Order er til í services. Hinsvegar ætti það að vera í Models?
 Order er til líka í Models.
 
+* Virkni bakvið Orders > New Order VANTAR
+* Virkni bakvið Lookup Order > ALLT Vantar CLS líka
+* Formatting í Register New Vehicle, vantar spacebar og :
+* Register New Vehicle infinity loop þegar þú confirmar. Skráir alltaf nýja bíl
+* Næ ekki að deregistera bíl þótt númerið sé til. Kemur bara could not find number
+* Ekki hægt að komast til baka úr deregister cars
+* Laga formatting á lookup customer? kemur í [BRACKETS]
+* Update info í lookup customer ERROR gotoClass() takes 2 positional arguments but 3 were given
+* Remove customer VIRKNI VANTAR
+
+
+
 Sameina virkni í öllu þessu og hafa þetta BARA Í models.
 
 
