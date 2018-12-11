@@ -4,6 +4,7 @@
 
 * Change Order virkar ekki
 * Chargeback Order virkar ekki
+* Customer Order History Vantar
 * Þegar ný pöntun er skráð verður að breyta þeim bíl í rented í csv skránni
 * að skrá nýtt order er maður beðinn um að slá inn OrderID, autopopulate???
 * Þegar þú eyðir David Beckham, þá kemur hann samt upp í lista af VV
