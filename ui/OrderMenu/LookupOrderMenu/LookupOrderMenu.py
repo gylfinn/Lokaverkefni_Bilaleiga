@@ -13,12 +13,12 @@ class LookupOrderMenu:
         os.system('cls')
         lookup_order_selection = ""
         order = self.__manager.getMetadata()
-        while(order == None):
-            order_id = input("Order ID: ")
-            order = self.__manager.getOrderManager().findOrder(order_id)
-            self.__manager.setMetadata(order)
+        order_id = input("Order ID: ")
+        order = self.__manager.getOrderManager().findOrder(order_id)
+        self.__manager.setMetadata(order)
+        os.system('cls')
 
-        while(lookup_order_selection !="9"):
+        while(lookup_order_selection !="9") and order != None:
             print(Fore.YELLOW, order, Fore.WHITE)
             print("1. Change order")
             print("2. Cancel Order")
@@ -34,4 +34,14 @@ class LookupOrderMenu:
                 self.__manager.gotoClass("chargebackorder")
             elif lookup_order_selection == "9":
                 self.__manager.clearMetadata() #Setja Metadata aftur í None svo engir lúðar fari að nota það aftur xD:PXOXOXOXOX
+                self.__manager.gotoClass("ordermenu")
+
+        if order == None:
+            print("Order Does Not Exist")
+            print("1. Search Again")
+            print("9. Go Back")
+            selection = input()
+            if selection == "1":
+                self.__manager.gotoClass("lookupordermenu")
+            else:
                 self.__manager.gotoClass("ordermenu")

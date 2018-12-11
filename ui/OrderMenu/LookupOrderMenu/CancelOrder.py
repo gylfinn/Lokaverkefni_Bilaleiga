@@ -8,12 +8,12 @@ from colorama import Fore
 class CancelOrder:
     def __init__(self, manager):
         self.__manager = manager
+
     def cancelOrder(self):
         os.system('cls')
         cancel_order_menu_selection = ""
         order = self.__manager.getMetadata()
         while(cancel_order_menu_selection !="9"):
-            print(Fore.YELLOW, order, Fore.WHITE)
             print("Are you sure you want to cancel this order?")
             print("1. Yes")
             print("2. No")

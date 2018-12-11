@@ -21,8 +21,22 @@ class NewOrder:
                 vehicle = self.__manager.getVehicleManager().findVehicle(car_regnum)
                 if not vehicle:
                     print("Cannot find vehicle")
+                    print("1. Try Again")
+                    print("9. Go Back")
+                    selection = input()
+                    if selection == "1":
+                        self.__manager.gotoClass("neworder")
+                    else:
+                        self.__manager.gotoClass("ordermenu")
                 if vehicle and vehicle.isRented():
                     print("Vehicle is not avilable")
+                    print("1. Try Again")
+                    print("9. Go Back")
+                    selection = input()
+                    if selection == "1":
+                        self.__manager.gotoClass("neworder")
+                    else:
+                        self.__manager.gotoClass("ordermenu")
             print(vehicle)    
             customer_ssn = input("Customer SSN: ") ##Check if Cust Exists
             date_from = input("Date From: ")
