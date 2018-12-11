@@ -24,7 +24,7 @@ class LookUpCustomerMenu:
                 print(Fore.YELLOW,end="")
                 print("Name: {} ".format(customer[NAME]))
                 print("SSN: {} ".format(customer[SSN]))
-                print("Adress: {} ".format(customer[ADDRESS]))
+                print("Address: {} ".format(customer[ADDRESS]))
                 print("Phone Number: {} ".format(customer[PHONENUM]))
                 print("Driver Licence Number {}".format(customer[DRIVERLICENCENUM])) 
                 print(Fore.WHITE)
@@ -38,7 +38,7 @@ class LookUpCustomerMenu:
 
                 if selection == "1":
                     self.__manager.setMetadata(customer)
-                    self.__manager.gotoClass("updateinformation")9
+                    self.__manager.gotoClass("updateinformation")
                 elif selection == "2":
                     user_history = self.__manager.getOrderManager().getOrdersByCustomer(SSN_input)
                     for order in user_history:
