@@ -1,14 +1,21 @@
-1. GERA MENU MANAGER KLASA SEM SÉR UM AÐ FLAKKA Á MILLI MENUA
-    forðumst þannig import setningar í öllum UI klösum og getum
-    importað allt í þann eina klasa og hann sér um að kalla á rétt menu
+● Reikna hvað leiga kostar án breytilegs kostnaðar (svo sem tryggingu)
+● Skila bíl í lok leigutímabils
+● Villumeðhöndlun á innslætti á kennitölu, dagsetningum og öðrum lykilgildum
 
-2. Tengja allt saman
 
+1. Þegar þú skráir VV og leitar að honum þá finnst hann ekki, en skráist samt
+1. Að eyða bíl gefur upp villu " could not find car" en eyðir honum samt sem áður
 3. Vantar back takka í customer> lookupcustomer
-
+4. Eki hægt að fara til bara úr Customers
 4. Vantar back takka í customer > register (HÆTTA VIÐ)
-
+* að skrá nýtt order er maður beðinn um að slá inn OrderID, autopopulate???
 5. Vantar CLEAR í look up order
+* Vantar Vehicle type í New Order
+* Fara til baka í Order ID
+* Í change order, sýna hvaða value þú ert að breyta
+* Validator í NewOrder
+*Cancel Order gefur error POP INDEX OUT OF RANGE
+* Þegar þú eyðir David Beckham, þá kemur hann samt upp í lista af VV
 
 6. CRUCIAL
 Customer og Order er til í services. Hinsvegar ætti það að vera í Models?
