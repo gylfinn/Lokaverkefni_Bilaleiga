@@ -11,6 +11,7 @@ from ui.OrderMenu.LookupOrderMenu.ChangeOrder import ChangeOrder
 from ui.OrderMenu.LookupOrderMenu.ChargebackOrder import ChargebackOrder
 from ui.OrderMenu.UpcomingOrders import UpcomingOrders
 from ui.OrderMenu.NewOrder import NewOrder
+from ui.OrderMenu.PriceCalculator import PriceCalculator 
 
 from ui.CustMenu.CustMenu import CustMenu
 from ui.CustMenu.LookupCustomerMenu.LookupCustomerMenu import LookUpCustomerMenu
@@ -50,6 +51,7 @@ REGISTERNEWCAR = "registernewcar"
 AVAILABLE = "available"
 CURRENTRENTALS = "currentrentals"
 OVERVIEW = "overview"
+PRICECALCULATOR = "pricecalculator"
 
 #Menu manager sem sér um að ferðast á milli UI klasa.
 #Er kallað á hann með location sem er klasinn sem á að fara í
@@ -82,6 +84,7 @@ class MenuManager:
         self.__current_rentals = CurrentRentals(self)
         self.__overview = Overview(self)
         self.__metadata = None
+        self.__price_calculator = PriceCalculator.PriceCalculator(self)
 
 
         #--Start up at login loaction--
@@ -147,9 +150,11 @@ class MenuManager:
             self.__deregister_car_menu.deregisterCar()
         elif self.__location == FLEETMENU:
             self.__fleet_menu.fleetMenu()
-        elif self.__location == AVAILABLE: #
-            self.__available.available()   # eftir að gera
-        elif self.__location == OVERVIEW:  # eftir að gera
-            self.__overview.overview()     # eftir
-        elif self.__location == CURRENTRENTALS: # eftir
-            self.__current_rentals.currentRentals() # eftir 
+        elif self.__location == AVAILABLE: 
+            self.__available.available()   
+        elif self.__location == OVERVIEW:  
+            self.__overview.overview()     
+        elif self.__location == CURRENTRENTALS:
+            self.__current_rentals.currentRentals()
+        elif self.__location == PRICECALCULATOR:
+            self.__price_calculator.priceCalculator()
