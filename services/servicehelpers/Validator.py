@@ -40,7 +40,7 @@ class Validator:
             valid = False
             return valid
     
-    def ValidateCarNumber(self, carnum)
+    def ValidateCarNumber(self, carnum):
         valid = True
 
         try:
