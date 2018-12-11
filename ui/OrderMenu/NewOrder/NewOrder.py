@@ -1,5 +1,4 @@
 import os
-from services.Order import Order
 from services.servicehelpers.Validator import Validator
 
 #Þessi klasi kallar tekur við info um nýtt order, sendir það svo til services sem skrifar í Repo layer
@@ -9,7 +8,6 @@ from services.servicehelpers.Validator import Validator
 class NewOrder:
     def __init__(self, manager):
         self.__manager = manager
-        self.__order = Order()
 
     def newOrder(self):
         os.system('cls')
@@ -21,7 +19,8 @@ class NewOrder:
             date_from = input("Date From: ")
             date_to = input("Date To: ")
             total_price = input("Total price: ")
-            self.__order.registerOrder(orderid, car_regnum, customer_ssn, date_from, date_to, total_price)
+            new_order = self.__manager.getOrderManager().createOrder(orderid, car_regnum, customer_ssn, date_from, date_to, total_price)
+            print(new_order)
             print("9. Back")
             upcoming_order_menu_selection = input()
             if upcoming_order_menu_selection == "9":

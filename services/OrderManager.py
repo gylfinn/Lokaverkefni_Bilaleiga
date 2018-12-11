@@ -32,6 +32,7 @@ class OrderManager(object):
         return newOrder
         
     def removeOrder(self, order_id):
+        order_id = int(order_id)
         order_id -= 1 # Ekki nice en works
         self.__Orders.pop(order_id)
         self.__Orders_Data.pop(order_id)

@@ -23,7 +23,7 @@ Order er til líka í Models.
 * Laga formatting á lookup customer? kemur í [BRACKETS]
 * Update info í lookup customer ERROR gotoClass() takes 2 positional arguments but 3 were given
 * Remove customer VIRKNI VANTAR
-
+* Vantar að laga Order id svo að removeOrder fallið virki alltaf.
 
 
 Sameina virkni í öllu þessu og hafa þetta BARA Í models.

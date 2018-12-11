@@ -1,16 +1,15 @@
 import os
 from services.Customer import Customer
-from services.Order import Order
+
 class LookUpCustomerMenu:
     def __init__(self, manager):
         self.__manager = manager
         self.__customer = Customer()
-        self.__order = Order()
 
     def customerMenuSelection(self):
             selection = ""
-            SSD = input("Customer SSD:")
-            customer = self.__customer.lookUpCustomer(SSD)
+            SSN = input("Customer SSN:")
+            customer = self.__customer.lookUpCustomer(SSN)
             self.__manager.setMetadata(customer)
             
             os.system('cls')
@@ -27,14 +26,13 @@ class LookUpCustomerMenu:
                 if selection == "1":
                     self.__manager.gotoClass("updateinformation", customer)
                 elif selection == "2":
-                    customer_ssn = customer[1]
-                    user_history = self.__order.findUserHistory(customer_ssn)
-                    for line in user_history:
-                        print(line,end="\n")
+                    user_history = self.__manager.getOrderManager().getOrdersByCustomer(SSN)
+                    for order in user_history:
+                        print(order, end="\n")
                 elif selection == "3":
-                    ssn = customer[1]
-                    self.__customer.deleteCustomer(customer, ssn)
+                    self.__customer.deleteCustomer(customer, SSN)
                     customer = None
                     return customer
                 elif selection == "9":
                     self.__manager.gotoClass("custmenu")
+                    self.__manager.clearMetadata()

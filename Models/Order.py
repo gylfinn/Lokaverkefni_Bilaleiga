@@ -5,8 +5,8 @@ class Order():
         self.__order_id = order_id
         self.__car_registration_number = car_registration_number
         self.__customer_ssn = customer_SSN
-        self.__date_from = datetime.strptime(date_from, "%b %d %Y %I:%M%p")
-        self.__date_to = datetime.strptime(date_to, "%b %d %Y %I:%M%p")
+        self.__date_from = datetime.strptime(date_from, "%d/%m/%y %H:%M") #21/11/06 16:30
+        self.__date_to = datetime.strptime(date_to, "%d/%m/%y %H:%M")
         self.__total_price = total_price
     def getOrderid(self):
         return self.__order_id
