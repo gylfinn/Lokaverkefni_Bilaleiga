@@ -42,6 +42,7 @@ class RegisterNewCar:
                 os.system('cls')
                 print("Car Registered Successfully")
             else:
+                os.system('cls')
                 print("Registration failed. Illegal car number.")
             if confirmation == "9":
                 self.__manager.gotoClass("caradministrationmenu")
