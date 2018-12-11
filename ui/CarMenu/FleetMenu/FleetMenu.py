@@ -1,4 +1,5 @@
 import os
+from colorama import Fore
 
 #This class is only 
 class FleetMenu:
@@ -9,10 +10,13 @@ class FleetMenu:
         fleet_menu_selection = ""
         while(fleet_menu_selection !="9"):
             print("Fleet Menu")
+            print(Fore.GREEN,end="")
             print("1. Overview")
             print("2. Current Rentals")
             print("3. Available")
+            print(Fore.RED,end="")
             print("9. Go Back")
+            print(Fore.WHITE,end="")
             fleet_menu_selection = input()
             os.system('cls')
             if fleet_menu_selection == "1":
