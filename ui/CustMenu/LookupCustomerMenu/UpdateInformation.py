@@ -18,7 +18,7 @@ class UpdateInformation:
         if action == "1" and customer:
             replace_index = 0
             name = input("Name: ")
-            self.__manager.customer.changeInfo(customer, name, replace_index)
+            self.__customer.changeInfo(customer, name, replace_index)
             customer[0] = name
             os.system('cls')
         elif action == "2" and customer:
