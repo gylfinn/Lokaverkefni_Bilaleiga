@@ -1,5 +1,5 @@
 import os
-
+from colorama import Fore
 
 class DeregisterCar:
     def __init__(self, manager):
@@ -11,7 +11,12 @@ class DeregisterCar:
             vehicle_reg_num = input("Registration number of Vehicle: ")
             os.system('cls') #registrationnumber,rented,modelyear,brand,price,type
             print("Registration number of Vehicle: {}".format(vehicle_reg_num))
-            deregister_car_confirmation = input("Enter 8 to Confirm or 9 to Cancel\n")
+            print(Fore.GREEN,end="")
+            print("8. To Confirm")
+            print(Fore.RED,end="")
+            print("9. To Cancel")
+            print(Fore.WHITE,end="")
+            deregister_car_confirmation = input()
             if deregister_car_confirmation == "8":
                 deregister_car = self.__manager.getVehicleManager().deregisterVehicle(vehicle_reg_num)
                 if deregister_car:
@@ -20,7 +25,11 @@ class DeregisterCar:
                     print("Could not find car with reg number: {}".format(vehicle_reg_num))
             elif deregister_car_confirmation == "9":
                 self.__manager.gotoClass("caradministrationmenu")
-            print("Press Any button to deregister a new Vehicle or 9 to go back:\n")
+            print(Fore.GREEN,end="")
+            print("Press Any button to deregister a new Vehicle")
+            print(Fore.RED,end="")
+            print("9. to go back")
+            print(Fore.WHITE,end="")
             action = input()
             if action == "9":
                 self.__manager.gotoClass("caradministrationmenu")
