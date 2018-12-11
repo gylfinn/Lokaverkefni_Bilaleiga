@@ -1,6 +1,7 @@
 from services.Login import Login
 from services.servicehelpers.IsInfoValid import IsInfoValid
 from ui.MainMenu import MainMenu
+from colorama import Fore
 import getpass
 import os
 import time
@@ -23,7 +24,7 @@ class LoginMenu:
                 self.__manager.gotoClass("mainmenu")
             else: # ef annaðhvort username eða password er vitlaust
                 os.system('cls')
-                print("Wrong Username and/or Password\n")
+                print(Fore.RED,"Wrong Username and/or Password\n",Fore.WHITE)
     def header(self, check_if_admin, username):
         if check_if_admin:
             admintag = "(A)"
