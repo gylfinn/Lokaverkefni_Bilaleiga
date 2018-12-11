@@ -22,7 +22,7 @@ class CancelOrder:
             if cancel_order_menu_selection == "9":
                 self.__manager.gotoClass("lookupordermenu")
             elif cancel_order_menu_selection == "1":
-                self.__manager.getOrderManager().removeOrder(order.getOrderid())
+                self.__manager.getOrderManager().removeOrder(order)
                 self.__manager.clearMetadata()
                 self.__manager.gotoClass("ordermenu")
             elif cancel_order_menu_selection == "2":

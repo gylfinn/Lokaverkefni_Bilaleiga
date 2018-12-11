@@ -1,6 +1,7 @@
 from repo.GetData import GetData
 from repo.SaveData import SaveData
 from Models.Order import Order
+from datetime import datetime
 
 ORDER_FILE = "orders.csv"
 ORDER_ID = 0
@@ -27,17 +28,18 @@ class OrderManager(object):
     def createOrder(self, order_id, car_reg, customer_SSN, date_from, date_to, price):
         newOrder = Order(order_id, car_reg, customer_SSN, date_from, date_to, price)
         self.__Orders.append(newOrder)
-        self.__Orders_Data.append([order_id, car_reg, customer_SSN, date_from, date_to, price])
         self.Save()
         return newOrder
         
-    def removeOrder(self, order_id):
-        order_id = int(order_id)
-        order_id -= 1 # Ekki nice en works
-        self.__Orders.pop(order_id)
-        self.__Orders_Data.pop(order_id)
+    def removeOrder(self, order):
+        self.__Orders.remove(order)
         self.Save()
-    
+
+    def updateOrderData(self):
+        self.__Orders_Data.clear()
+        for order in self.__Orders:
+            self.__Orders_Data.append([order.getOrderid(), order.getCarRegistration(), order.getCustomerSSN(), datetime.strftime(order.getDateFrom(), "%d/%m/%y %H:%M"), datetime.strftime(order.getDateTo(), "%d/%m/%y %H:%M"), order.getPrice()])
+
     def getOrders(self, by_dates = False):
         if by_dates:
             return self.__Orders #TODO: Látta þetta virka
@@ -62,4 +64,5 @@ class OrderManager(object):
         return None #Ef ekkert order er found þá returnar hann none
 
     def Save(self):
+        self.updateOrderData()
         self.__DataSaver.writeOrdersData(self.__Orders_Data)

@@ -13,9 +13,18 @@ class NewOrder:
         os.system('cls')
         new_order_menu_selection = ""
         while(new_order_menu_selection !="9"):
-            orderid = input("Order Id: ")
-            car_regnum = input("Car Registration Number: ")
-            customer_ssn = input("Customer SSN: ")
+            orderid = int(self.__manager.getOrderManager().getOrders()[-1].getOrderid())
+            orderid += 1
+            vehicle = None
+            while vehicle == None:
+                car_regnum = input("Car Registration Number: ")
+                vehicle = self.__manager.getVehicleManager().findVehicle(car_regnum)
+                if not vehicle:
+                    print("Cannot find vehicle")
+                if vehicle and vehicle.isRented():
+                    print("Vehicle is not avilable")
+            print(vehicle)    
+            customer_ssn = input("Customer SSN: ") ##Check if Cust Exists
             date_from = input("Date From: ")
             date_to = input("Date To: ")
             total_price = input("Total price: ")
