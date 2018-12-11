@@ -1,5 +1,5 @@
 import os
-
+from services.servicehelpers.Validator import Validator
 
 class RegisterNewCar:
     def __init__(self, manager):
@@ -28,7 +28,7 @@ class RegisterNewCar:
             print("Brand of Vehicle: {}".format(vehicle_brand))
             print("Type of Vehicle (1 for Hatchback, 2 for Sedan, 3 for SUV): {}\n".format(vehicle_type))
             confirmation = input("Enter 8 to Confirm or 9 to Cancel:\n")
-            if confirmation == "8":
+            if confirmation == "8" and Validator.ValidateCarNumber(vehicle_reg_num):
                 vehicle_price = 0
                 rented = False
                 if vehicle_type == "1":
@@ -40,6 +40,8 @@ class RegisterNewCar:
                 self.__manager.getVehicleManager().registerNewVehicle(vehicle_reg_num, rented, model_year, vehicle_brand, vehicle_price, vehicle_type)
                 os.system('cls')
                 print("Car Registered Successfully")
+            else:
+                print("Registration failed. Illegal car number.")
             if confirmation == "9":
                 self.__manager.gotoClass("caradministrationmenu")
             print("Press Any button to Register a new Vehicle or 9 to go Back:\n")
