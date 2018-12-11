@@ -60,7 +60,11 @@ class VehicleManager(object):
             self.save()
         else:
             return None
-            
+    def findVehicle(self, registration_number):
+        for vehicle in self.__Vehicles:
+            if vehicle.getRegistrationNum().lower() == registration_number.lower():
+                return vehicle
+        return None
     def findVehicleID(self, registration_number):
         for index, vehicle in enumerate(self.__Vehicles):
             if vehicle.getRegistrationNum() == registration_number:
