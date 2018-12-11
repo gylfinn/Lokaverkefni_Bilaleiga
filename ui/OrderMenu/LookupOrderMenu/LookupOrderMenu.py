@@ -20,10 +20,13 @@ class LookupOrderMenu:
 
         while(lookup_order_selection !="9") and order != None:
             print(Fore.YELLOW, order, Fore.WHITE)
+            print(Fore.GREEN,end="")
             print("1. Change order")
             print("2. Cancel Order")
             print("3. Chargeback Order")
+            print(Fore.RED,end="")
             print("9. Back")
+            print(Fore.WHITE,end="")
             lookup_order_selection = input()
 
             if lookup_order_selection == "1":

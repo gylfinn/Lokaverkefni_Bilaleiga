@@ -16,8 +16,9 @@ class UpcomingOrders:
             for order in Orders:
                 print(Fore.YELLOW,end="")
                 print(order)
-                print(Fore.WHITE,end="")
+            print(Fore.RED,end="")
             print("9. Back")
+            print(Fore.WHITE,end="")
             upcoming_order_menu_selection = input()
             if upcoming_order_menu_selection == "9":
                 self.__manager.gotoClass("ordermenu")
