@@ -13,7 +13,7 @@ class LookUpCustomerMenu:
             self.__manager.setMetadata(customer)
             
             os.system('cls')
-            while (selection != "9"):
+            while (selection != "9") and customer != None:
                 print(customer)
                 print("1. Update information ")
                 print("2. Customer Order History")
@@ -36,3 +36,13 @@ class LookUpCustomerMenu:
                 elif selection == "9":
                     self.__manager.gotoClass("custmenu")
                     self.__manager.clearMetadata()
+
+            print("Customer Does Not Exist! ")
+            print("1. Search Again")
+            print("9. Go Back")
+            action = input()
+            os.system('cls')
+            if action == "1":
+                self.__manager.gotoClass("lookupcustomermenu")
+            else:
+                self.__manager.gotoClass("custmenu")
