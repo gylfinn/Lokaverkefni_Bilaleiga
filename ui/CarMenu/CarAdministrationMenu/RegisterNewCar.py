@@ -48,5 +48,6 @@ class RegisterNewCar:
                 self.__manager.gotoClass("caradministrationmenu")
             print("Press Any button to Register a new Vehicle or 9 to go Back:\n")
             action = input()
+            os.system('cls')
             if action == "9":
                 self.__manager.gotoClass("caradministrationmenu")
