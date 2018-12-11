@@ -15,9 +15,9 @@ class RegisterCustomer:
         adress = input("Address: ")
         phonenumber = input("Phone number: ")
         driver_license_number = input("Driver License number: ")
-        self.__customer.registerCustomer(name, SSN, adress, phonenumber, driver_license_number)
         os.system('cls')
         if self.__validator.ValidateSSN(SSN):
+            self.__customer.registerCustomer(name, SSN, adress, phonenumber, driver_license_number)
             print("{}, SSN: {} registered succesfully!".format(name, SSN))
             print("Press 1 to register another one, any other key to go back\n")
             regcust_confirmation = input()

@@ -3,81 +3,11 @@
 ● Villumeðhöndlun á innslætti á kennitölu, dagsetningum og öðrum lykilgildum
 
 
-1. Þegar þú skráir VV og leitar að honum þá finnst hann ekki, en skráist samt
 1. Að eyða bíl gefur upp villu " could not find car" en eyðir honum samt sem áður
-3. Vantar back takka í customer> lookupcustomer
-4. Eki hægt að fara til bara úr Customers
-4. Vantar back takka í customer > register (HÆTTA VIÐ)
 * að skrá nýtt order er maður beðinn um að slá inn OrderID, autopopulate???
 5. Vantar CLEAR í look up order
-* Vantar Vehicle type í New Order
-* Fara til baka í Order ID
 * Í change order, sýna hvaða value þú ert að breyta
 * Validator í NewOrder
-*Cancel Order gefur error POP INDEX OUT OF RANGE
 * Þegar þú eyðir David Beckham, þá kemur hann samt upp í lista af VV
-
-6. CRUCIAL
-Customer og Order er til í services. Hinsvegar ætti það að vera í Models?
-Order er til líka í Models.
-
-* Virkni bakvið Orders > New Order VANTAR
-* Virkni bakvið Lookup Order > ALLT Vantar CLS líka
-* Formatting í Register New Vehicle, vantar spacebar og :
-* Register New Vehicle infinity loop þegar þú confirmar. Skráir alltaf nýja bíl
-* Næ ekki að deregistera bíl þótt númerið sé til. Kemur bara could not find number
-* Ekki hægt að komast til baka úr deregister cars
-* Laga formatting á lookup customer? kemur í [BRACKETS]
-* Update info í lookup customer ERROR gotoClass() takes 2 positional arguments but 3 were given
-* Remove customer VIRKNI VANTAR
-* Vantar að laga Order id svo að removeOrder fallið virki alltaf.
-
-
-Sameina virkni í öllu þessu og hafa þetta BARA Í models.
-
-
-
-
-
-
-● Birta alla lausa bíla
-    Done, bara tengja við UI
-
-● Birta alla bíla sem eru í útleigu sem stendur
-    DONE bara eftir að koma inní UI tengja saman
-
-
-● Skrá viðskiptavin með öllum nauðsynlegum upplýsingum
-    DONE bara eftir að koma inní UI tengja saman
-
-● Fletta viðskiptavini upp í kerfinu þegar þörf er á
-    DONE bara eftir að koma inní UI tengja saman
-
-● Skrá pöntun fyrir ákveðna bílategund á ákveðnum degi í ákveðinn tíma
-    Alveg eftir.
-
-● Fletta upp pöntun aftur þegar þörf er á
-    DONE bara eftir að koma inní UI tengja saman
-
-● Reikna hvað leiga kostar án breytilegs kostnaðar (svo sem tryggingu)
-    Alveg eftir
-
-● Skila bíl í lok leigutímabils
-    Alveg eftir
-
-● Afskrá viðskiptavin
-    DONE bara eftir að koma inní UI tengja saman
-
-● Bakfæra pöntun (afpanta bíl)
-    Alveg eftir
-
-● Breyta/uppfæra skráningu um viðskiptavin
-    DONE bara eftir að koma inní UI tengja saman
-
-● Breyta/uppfæra fyrri pöntun
-    Alveg eftir
-
-● Villumeðhöndlun á innslætti á kennitölu, dagsetningum og öðrum lykilgildum
-    Alveg eftir
-
-● Finna út hvernig True/False í cars.csv verði bool en ekki string  
+* Það er hægt að registera nytt vehicle þó að skráninganumerið sé nu þegar skráð LAGA
+* Það er hægt að registera nyjan customer þá að kennitalan sé nú þegar i notkun LAGA

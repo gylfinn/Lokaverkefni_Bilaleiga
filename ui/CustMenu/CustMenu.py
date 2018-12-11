@@ -28,3 +28,6 @@ class CustMenu:
             #               
             elif selection == "2":
                 self.__manager.gotoClass("registercustomer")
+
+            else:
+                self.__manager.gotoClass("mainmenu")
