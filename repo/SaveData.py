@@ -19,3 +19,10 @@ class SaveData():
             writer.writerow(veh)
         file.close()
 
+    def writeCustomersData(self, customers):
+        file = open(self.__file_name, "w", newline = '')
+        file.write("name, ssn, address, phonenumber, driverslicensenumber\n")
+        writer = csv.writer(file, delimeter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
+        for cust in customers: 
+            writer.writerow(cust)
+        file.close()

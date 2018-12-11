@@ -28,12 +28,12 @@ class OrderManager(object):
     def createOrder(self, order_id, car_reg, customer_SSN, date_from, date_to, price):
         newOrder = Order(order_id, car_reg, customer_SSN, date_from, date_to, price)
         self.__Orders.append(newOrder)
-        self.Save()
+        self.save()
         return newOrder
         
     def removeOrder(self, order):
         self.__Orders.remove(order)
-        self.Save()
+        self.save()
 
     def updateOrderData(self):
         self.__Orders_Data.clear()
@@ -47,11 +47,11 @@ class OrderManager(object):
             return self.__Orders
 
     def getOrdersByCustomer(self, SSN):
-        customer_histroy = list()
+        customer_history = list()
         for order in self.__Orders:
             if order.getCustomerSSN == SSN:
-                customer_histroy.append(order)
-        return customer_histroy
+                customer_history.append(order)
+        return customer_history
 
     def findOrder(self, search_key): # Hægt að search ID, Registration Number og SSN
         for order in self.__Orders:
@@ -63,6 +63,6 @@ class OrderManager(object):
                 return order
         return None #Ef ekkert order er found þá returnar hann none
 
-    def Save(self):
+    def save(self):
         self.updateOrderData()
         self.__DataSaver.writeOrdersData(self.__Orders_Data)
