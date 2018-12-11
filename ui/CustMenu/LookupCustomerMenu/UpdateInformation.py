@@ -10,8 +10,8 @@ class UpdateInformation:
         customer = self.__manager.getMetadata()
         print("1. Change Name ")
         print("2. Change SSN")
-        print("3. Change Phone Number")
-        print("4. Change Adress")
+        print("3. Change Address")
+        print("4. Change Phone Number")
         print("5. Update Driver Licence ")
         action = input()
         os.system('cls')
@@ -29,15 +29,15 @@ class UpdateInformation:
             os.system('cls')
         elif action == "3" and customer:
             replace_index = 2
-            phone_number = input("Phone Number: ")
-            self.__customer.changeInfo(customer, phone_number, replace_index)
-            customer[2] = phone_number
+            address = input("Address: ")
+            self.__customer.changeInfo(customer, address, replace_index)
+            customer[2] = address
             os.system('cls')
         elif action == "4" and customer:
             replace_index = 3
-            adress = input("Adress: ")
-            self.__customer.changeInfo(customer, adress, replace_index)
-            customer[3] = adress
+            phone_number = input("Phone Number: ")
+            self.__customer.changeInfo(customer, phone_number, replace_index)
+            customer[3] = phone_number
             os.system('cls')
         elif action == "5" and customer:
             replace_index = 4
