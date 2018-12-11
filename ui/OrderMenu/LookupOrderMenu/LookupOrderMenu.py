@@ -15,6 +15,7 @@ class LookupOrderMenu:
         order = self.__manager.getMetadata()
         order_id = input("Order ID: ")
         order = self.__manager.getOrderManager().findOrder(order_id)
+        os.system('cls')
 
         while(lookup_order_selection !="9") and order != None:
             print(Fore.YELLOW, order, Fore.WHITE)
