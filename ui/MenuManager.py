@@ -125,8 +125,8 @@ class MenuManager:
             self.__lookup_customer_menu.customerMenuSelection()
         elif self.__location == CUSTMENU:
             self.__cust_menu.customerMenu()
-        # elif self.__location == UPDATEINFORMATION:
-            # self.__update_information.updateInformation()
+        elif self.__location == UPDATEINFORMATION:
+            self.__update_information.updateInformation()
         elif self.__location == REGISTERCUSTOMER:
             self.__register_customer.registerCustomer()
         elif self.__location == LOOKUPCUSTOMER:

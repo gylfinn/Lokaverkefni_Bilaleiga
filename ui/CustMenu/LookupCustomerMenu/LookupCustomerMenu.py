@@ -37,7 +37,8 @@ class LookUpCustomerMenu:
                 os.system('cls')
 
                 if selection == "1":
-                    self.__manager.gotoClass("updateinformation", customer)
+                    self.__manager.setMetadata(customer)
+                    self.__manager.gotoClass("updateinformation")
                 elif selection == "2":
                     user_history = self.__manager.getOrderManager().getOrdersByCustomer(SSN)
                     for order in user_history:
