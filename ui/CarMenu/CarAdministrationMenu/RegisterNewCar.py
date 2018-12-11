@@ -4,6 +4,7 @@ from services.servicehelpers.Validator import Validator
 class RegisterNewCar:
     def __init__(self, manager):
         self.__manager = manager
+        self.__validator = Validator()
     def registerNewCar(self):
         os.system('cls')
         register_new_car_menu_selection = ""
@@ -28,7 +29,7 @@ class RegisterNewCar:
             print("Brand of Vehicle: {}".format(vehicle_brand))
             print("Type of Vehicle (1 for Hatchback, 2 for Sedan, 3 for SUV): {}\n".format(vehicle_type))
             confirmation = input("Enter 8 to Confirm or 9 to Cancel:\n")
-            if confirmation == "8" and Validator.ValidateCarNumber(vehicle_reg_num):
+            if confirmation == "8" and self.__validator.ValidateCarNumber(vehicle_reg_num):
                 vehicle_price = 0
                 rented = False
                 if vehicle_type == "1":
