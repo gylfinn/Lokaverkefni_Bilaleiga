@@ -25,8 +25,8 @@ class ChangeOrder:
             print("Car Registration Number:")
             order.setCarRegistration(input() or order.getCarRegistration())
             print(order)
-            print("1. Confirm")
-            print("9. Back")
+            print(Fore.GREEN, "1. Confirm", Fore.WHITE)
+            print(Fore.RED, "9. Back", Fore.WHITE)
             change_order_menu_selection = input()
             if change_order_menu_selection == "9":
                 self.__manager.gotoClass("lookupordermenu")
