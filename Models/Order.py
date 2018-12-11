@@ -36,7 +36,7 @@ class Order():
     def __repr__(self):
         return [self.getOrderid(), self.getCarRegistration(), self.getCustomerSSN(), self.getDateFrom(), self.getDateTo(), self.getPrice()]
     def __str__(self):
-        return "OrderID: {}, Car Registration: {} Customer SSN: {} Date: From {} to {}, Price:{}".format(self.getOrderid(), self.getCarRegistration(), self.getCustomerSSN(), self.getDateFrom(), self.getDateTo(), self.getPrice())
+        return "Order ID: {}, Car registration number: {} Customer SSN: {} Date: From {} to {}, Price:{}".format(self.getOrderid(), self.getCarRegistration(), self.getCustomerSSN(), self.getDateFrom(), self.getDateTo(), self.getPrice())
     
     
     
