@@ -4,6 +4,7 @@
 
 * Change Order virkar ekki
 * Chargeback Order virkar ekki
+* Þegar ný pöntun er skráð verður að breyta þeim bíl í rented í csv skránni
 * að skrá nýtt order er maður beðinn um að slá inn OrderID, autopopulate???
 * Þegar þú eyðir David Beckham, þá kemur hann samt upp í lista af VV
 * Það er hægt að registera nytt vehicle þó að skráninganumerið sé nu þegar skráð LAGA
