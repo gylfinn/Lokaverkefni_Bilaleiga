@@ -17,11 +17,11 @@ class ChargebackOrder:
             print("SSN:", order.getCustomerSSN())
             print("Date from:", order.getDateFrom())
             print("Date to:", order.getDateTo())
-            print("Car Registration Number: ", order.getCarRegistration())
-            print("1. Confirm chargeback ?")
+            print("Car Registration Number:", order.getCarRegistration())
+            print("1. Confirm chargeback?")
             print("9. Back")
             chargeback_order_menu_selection = input()
             if chargeback_order_menu_selection == "9":
                 self.__manager.gotoClass("lookupordermenu")
             elif chargeback_order_menu_selection == "1":
-                self.__manager.getOrderManager().removeOrder(int(order.getOrderid()))
+                self.__manager.getOrderManager().removeOrder(order)
