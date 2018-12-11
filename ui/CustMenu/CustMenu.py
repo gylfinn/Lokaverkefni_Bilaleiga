@@ -1,5 +1,6 @@
 import os
 from services.Customer import Customer
+from colorama import Fore
 
 class CustMenu:
     def __init__(self, manager):
@@ -11,9 +12,12 @@ class CustMenu:
         os.system('cls')
         while (selection != "9"):
             print("Customers")
+            print(Fore.GREEN,end="")
             print("1. Lookup Customer")
             print("2. Register Customer")
+            print(Fore.RED,end="")
             print("9. Go Back")
+            print(Fore.WHITE,end="")
             print("--------------")
             selection = input()
             os.system('cls')

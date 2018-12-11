@@ -27,11 +27,13 @@ class LookUpCustomerMenu:
                 print("Address: {} ".format(customer[ADDRESS]))
                 print("Phone Number: {} ".format(customer[PHONENUM]))
                 print("Driver Licence Number {}".format(customer[DRIVERLICENCENUM])) 
-                print(Fore.WHITE)
+                print(Fore.GREEN,end="")
                 print("1. Update information ")
                 print("2. Customer Order History")
                 print("3. Remove Customer")
+                print(Fore.RED,end="")
                 print("9. Go Back")
+                print(Fore.WHITE,end="")
                 print("--------------")
                 selection = input()
                 os.system('cls')
@@ -52,9 +54,13 @@ class LookUpCustomerMenu:
                     self.__manager.clearMetadata()
 
             if customer == None:
+                print(Fore.RED,end="")
                 print("Customer Does Not Exist! ")
+                print(Fore.GREEN,end="")
                 print("1. Search Again")
+                print(Fore.RED,end="")
                 print("9. Go Back")
+                print(Fore.WHITE,end="")
                 action = input()
                 os.system('cls')
                 if action == "1":
