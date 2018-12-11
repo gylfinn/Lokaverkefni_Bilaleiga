@@ -2,6 +2,12 @@ import os
 from services.Customer import Customer
 from colorama import Fore
 
+NAME = 0
+SSN = 1
+ADRESS = 2
+PHONENUM = 3
+DRIVERLICENCENUM = 4
+
 class LookUpCustomerMenu:
     def __init__(self, manager):
         self.__manager = manager
@@ -15,7 +21,13 @@ class LookUpCustomerMenu:
             
             os.system('cls')
             while (selection != "9") and customer != None:
-                print(Fore.YELLOW, customer, Fore.WHITE)
+                print(Fore.YELLOW,end="")
+                print("Name: {} ".format(customer[0]))
+                print("SSN: {} ".format(customer[1]))
+                print("Adress: {} ".format(customer[2]))
+                print("Phone Number: {} ".format(customer[3]))
+                print("Driver Licence Number {}".format(customer[4])) 
+                print(Fore.WHITE)
                 print("1. Update information ")
                 print("2. Customer Order History")
                 print("3. Remove Customer")
