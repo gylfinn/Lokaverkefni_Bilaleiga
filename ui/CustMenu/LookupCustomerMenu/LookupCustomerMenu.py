@@ -1,5 +1,6 @@
 import os
 from services.Customer import Customer
+from colorama import Fore
 
 class LookUpCustomerMenu:
     def __init__(self, manager):
@@ -14,7 +15,7 @@ class LookUpCustomerMenu:
             
             os.system('cls')
             while (selection != "9") and customer != None:
-                print(customer)
+                print(Fore.YELLOW, customer, Fore.WHITE)
                 print("1. Update information ")
                 print("2. Customer Order History")
                 print("3. Remove Customer")
@@ -37,12 +38,13 @@ class LookUpCustomerMenu:
                     self.__manager.gotoClass("custmenu")
                     self.__manager.clearMetadata()
 
-            print("Customer Does Not Exist! ")
-            print("1. Search Again")
-            print("9. Go Back")
-            action = input()
-            os.system('cls')
-            if action == "1":
-                self.__manager.gotoClass("lookupcustomermenu")
-            else:
-                self.__manager.gotoClass("custmenu")
+            if customer == None:
+                print("Customer Does Not Exist! ")
+                print("1. Search Again")
+                print("9. Go Back")
+                action = input()
+                os.system('cls')
+                if action == "1":
+                    self.__manager.gotoClass("lookupcustomermenu")
+                else:
+                    self.__manager.gotoClass("custmenu")
