@@ -52,14 +52,17 @@ class VehicleManager(object):
         self.save() #Save-a í hvert sinn sem við bætum við nýjum bíl
         return newVehicle
 
+    #Looks for regnum, if found deregisters car and returns TRUE
+    #Else returns False
     def deregisterVehicle(self, registration_number):
         vehid = self.findVehicleID(registration_number)
         if vehid:
             self.__Vehicles.pop(vehid)
             self.__Vehicles_Data.pop(vehid)
             self.save()
+            return True
         else:
-            return None
+            return False
     def findVehicle(self, registration_number):
         for vehicle in self.__Vehicles:
             if vehicle.getRegistrationNum().lower() == registration_number.lower():
