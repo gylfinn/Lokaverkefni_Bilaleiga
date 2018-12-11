@@ -1,5 +1,6 @@
 import os
 from services.servicehelpers.Validator import Validator
+from colorama import Fore
 
 #Þessi klasi kallar tekur við info um nýtt order, sendir það svo til services sem skrifar í Repo layer
 #Á líka að geta tekið við daga fjölda og týpu af bíl og sent til services sem reiknar út
@@ -21,8 +22,11 @@ class NewOrder:
                 vehicle = self.__manager.getVehicleManager().findVehicle(car_regnum)
                 if not vehicle:
                     print("Cannot find vehicle")
+                    print(Fore.GREEN,end="")
                     print("1. Try Again")
+                    print(Fore.RED,end="")
                     print("9. Go Back")
+                    print(Fore.WHITE,end="")
                     selection = input()
                     if selection == "1":
                         self.__manager.gotoClass("neworder")
@@ -30,13 +34,17 @@ class NewOrder:
                         self.__manager.gotoClass("ordermenu")
                 if vehicle and vehicle.isRented():
                     print("Vehicle is not avilable")
+                    print(Fore.GREEN,end="")
                     print("1. Try Again")
+                    print(Fore.RED,end="")
                     print("9. Go Back")
+                    print(Fore.WHITE,end="")
                     selection = input()
                     if selection == "1":
                         self.__manager.gotoClass("neworder")
                     else:
                         self.__manager.gotoClass("ordermenu")
+
             print(vehicle)    
             customer_ssn = input("Customer SSN: ") ##Check if Cust Exists
             date_from = input("Date From: ")
