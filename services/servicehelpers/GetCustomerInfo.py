@@ -6,6 +6,7 @@ class GetCustomerInfo:
         self.__customer_data = self.__customer.readCustomerData()
 
     def getCustomer(self, ssn):
+        self.__customer_data = self.__customer.readCustomerData()
         for line in self.__customer_data:
             if ssn in line:
                 return line
