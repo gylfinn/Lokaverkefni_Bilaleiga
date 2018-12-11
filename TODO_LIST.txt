@@ -4,9 +4,7 @@
 
 
 1. Að eyða bíl gefur upp villu " could not find car" en eyðir honum samt sem áður
-3. Vantar back takka í customer> lookupcustomer
-4. Eki hægt að fara til bara úr Customers
-4. Vantar back takka í customer > register (HÆTTA VIÐ)
+4. Eki hægt að fara til bara úr Customers (eitthvað leiðinlegt)
 * að skrá nýtt order er maður beðinn um að slá inn OrderID, autopopulate???
 5. Vantar CLEAR í look up order
 * Vantar Vehicle type í New Order
