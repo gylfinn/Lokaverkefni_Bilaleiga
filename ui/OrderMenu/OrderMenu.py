@@ -15,6 +15,7 @@ class OrderMenu:
             print("1. Upcoming Orders")
             print("2. New Order")
             print("3. Look up order")
+            print("4. Price Calculator")
             print(Fore.RED,end="")
             print("9. Back")
             print(Fore.WHITE,end="")
@@ -25,5 +26,7 @@ class OrderMenu:
                 self.__manager.gotoClass("neworder")
             elif order_menu_selection == "3":
                 self.__manager.gotoClass("lookupordermenu")
+            elif order_menu_selection == "4":
+                self.__manager.gotoClass("pricecalculator")
             elif order_menu_selection =="9":
                 self.__manager.gotoClass("mainmenu")
