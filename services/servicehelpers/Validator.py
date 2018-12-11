@@ -45,9 +45,10 @@ class Validator:
 
         try:
             int(carnum)
-        except:
             valid = False
             return valid
+        except:
+            pass
 
         #Check if first 2 are string
         #if int() cast fails then it is a string
