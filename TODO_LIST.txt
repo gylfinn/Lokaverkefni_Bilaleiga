@@ -4,7 +4,6 @@
 
 
 * að skrá nýtt order er maður beðinn um að slá inn OrderID, autopopulate???
-5. Vantar CLEAR í look up order
 * Í change order, sýna hvaða value þú ert að breyta
 * Þegar þú eyðir David Beckham, þá kemur hann samt upp í lista af VV
 * Það er hægt að registera nytt vehicle þó að skráninganumerið sé nu þegar skráð LAGA
