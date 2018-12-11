@@ -2,9 +2,9 @@
 ● Skila bíl í lok leigutímabils
 ● Villumeðhöndlun á innslætti á kennitölu, dagsetningum og öðrum lykilgildum
 
-
+* Change Order virkar ekki
+* Chargeback Order virkar ekki
 * að skrá nýtt order er maður beðinn um að slá inn OrderID, autopopulate???
-* Í change order, sýna hvaða value þú ert að breyta
 * Þegar þú eyðir David Beckham, þá kemur hann samt upp í lista af VV
 * Það er hægt að registera nytt vehicle þó að skráninganumerið sé nu þegar skráð LAGA
 * Það er hægt að registera nyjan customer þá að kennitalan sé nú þegar i notkun LAGA
