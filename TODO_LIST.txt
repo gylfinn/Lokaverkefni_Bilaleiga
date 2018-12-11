@@ -7,11 +7,8 @@
 4. Eki hægt að fara til bara úr Customers (eitthvað leiðinlegt)
 * að skrá nýtt order er maður beðinn um að slá inn OrderID, autopopulate???
 5. Vantar CLEAR í look up order
-* Vantar Vehicle type í New Order
-* Fara til baka í Order ID
 * Í change order, sýna hvaða value þú ert að breyta
 * Validator í NewOrder
-*Cancel Order gefur error POP INDEX OUT OF RANGE
 * Þegar þú eyðir David Beckham, þá kemur hann samt upp í lista af VV
 * Það er hægt að registera nytt vehicle þó að skráninganumerið sé nu þegar skráð LAGA
 * Það er hægt að registera nyjan customer þá að kennitalan sé nú þegar i notkun LAGA
