@@ -28,6 +28,7 @@ from ui.CarMenu.FleetMenu.FleetMenu import FleetMenu
 from ui.CarMenu.FleetMenu.Overview import Overview 
 from ui.CarMenu.FleetMenu.Available import Available
 from ui.CarMenu.FleetMenu.CurrentRentals import CurrentRentals
+from ui.Header import Header
 
 EMPTY = "EMPTY"
 CANCELORDER = "cancelorder"
@@ -58,6 +59,9 @@ PRICECALCULATOR = "pricecalculator"
 #Er kallað á hann með location sem er klasinn sem á að fara í
 class MenuManager:
     def __init__(self):
+        self.__isadmin = False
+        self.__fullname = ""
+        self.__header = Header()
         self.__location = EMPTY
         self.__last_location = EMPTY
         self.__login_menu = LoginMenu(self)
@@ -95,6 +99,9 @@ class MenuManager:
     def isAdmin(self):
         return self.__login_menu.isadmin
 
+    def getFullname(self):
+        return self.__login_menu.fullname
+
     def getMetadata(self):
         return self.__metadata
     
@@ -112,6 +119,16 @@ class MenuManager:
     
     def getCustomerManager(self):
         return self.__customer_manager
+
+    def setHeader(self):
+        self.__fullname = self.__login_menu.fullname
+        self.__isadmin = self.__login_menu.isadmin
+        
+        self.__header.setFullname(self.__fullname)
+        self.__header.setIsAdmin(self.__isadmin)
+
+    def printHeader(self):
+        print(self.__header.printHeader())
 
     def gotoClass(self, location):
         self.__last_location = self.__location
