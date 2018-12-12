@@ -14,7 +14,7 @@ from ui.OrderMenu.UpcomingOrders import UpcomingOrders
 from ui.OrderMenu.NewOrder import NewOrder
 from ui.OrderMenu.PriceCalculator import PriceCalculator 
 
-from ui.CustMenu.CustMenu import CustMenu
+from ui.CustMenu.CustMenu import CustMenu 
 from ui.CustMenu.LookupCustomerMenu.LookupCustomerMenu import LookUpCustomerMenu
 from ui.CustMenu.LookupCustomerMenu.UpdateInformation import UpdateInformation
 from ui.CustMenu.LookupCustomer import LookUpCustomer
