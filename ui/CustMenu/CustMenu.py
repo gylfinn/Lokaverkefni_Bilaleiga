@@ -1,11 +1,11 @@
 import os
-from services.Customer import Customer
+from services.CustomerManager import CustomerManager
 from colorama import Fore
 
 class CustMenu:
     def __init__(self, manager):
         self.__manager = manager
-        self.__customer = Customer()
+        self.__customer = CustomerManager()
 
     def customerMenu(self):
         selection = ""

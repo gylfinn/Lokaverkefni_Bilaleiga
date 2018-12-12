@@ -37,7 +37,7 @@ class CustomerManager(object):
     def updateCustomerData(self):
         self.__customer_data.clear()
         for cust in self.__customers:
-            self.__customer_data.append([cust.getName(), cust.getSSN(), cust.getAddress(), cust.getPhoneNumber(), cust.getPhoneNumber(), cust.getDriversLicenseNumber()])
+            self.__customer_data.append([cust.getName(), cust.getSSN(), cust.getAddress(), cust.getPhoneNumber(), cust.getDriversLicenseNumber()])
     def findCustomer(self, search_key): #hægt að leita að name, ssn 
         for cust in self.__customers:
             if str(cust.getName()) == search_key:
