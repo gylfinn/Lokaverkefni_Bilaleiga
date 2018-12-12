@@ -17,6 +17,7 @@ from ui.OrderMenu.PriceCalculator import PriceCalculator
 from ui.CustMenu.CustMenu import CustMenu 
 from ui.CustMenu.LookupCustomerMenu.LookupCustomerMenu import LookUpCustomerMenu
 from ui.CustMenu.LookupCustomerMenu.UpdateInformation import UpdateInformation
+from ui.CustMenu.LookupCustomerMenu.CustomerOrderHistory import CustomerOrderHistory
 from ui.CustMenu.LookupCustomer import LookUpCustomer
 from ui.CustMenu.RegisterCustomer import RegisterCustomer
 
@@ -46,6 +47,7 @@ NEWORDER = "neworder"
 CUSTMENU = "custmenu"
 LOOKUPCUSTOMERMENU = "lookupcustomermenu"
 UPDATEINFORMATION = "updateinformation"
+LOOKUPCUSTOMERHISTORY = "lookupcustomerhistory"
 CARMENU = "carmenu"
 FLEETMENU = "fleetmenu"
 CARADMINISTRATIONMENU = "caradministrationmenu"
@@ -78,6 +80,7 @@ class MenuManager:
         self.__customer_manager = CustomerManager()
         self.__lookup_customer_menu = LookUpCustomerMenu(self)
         self.__update_information = UpdateInformation(self)
+        self.__customer_order_history = CustomerOrderHistory(self)
         self.__look_up_customer = LookUpCustomer(self)
         self.__register_customer = RegisterCustomer(self)
         self.__cancel_order = CancelOrder(self)
@@ -151,6 +154,8 @@ class MenuManager:
             self.__new_order.newOrder()
         elif self.__location == LOOKUPCUSTOMERMENU:
             self.__lookup_customer_menu.customerMenuSelection()
+        elif self.__location == LOOKUPCUSTOMERHISTORY:
+            self.__customer_order_history.getOrderHistory()
         elif self.__location == CUSTMENU:
             self.__cust_menu.customerMenu()
         elif self.__location == UPDATEINFORMATION:

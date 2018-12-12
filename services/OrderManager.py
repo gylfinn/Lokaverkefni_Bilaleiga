@@ -49,7 +49,7 @@ class OrderManager(object):
     def getOrdersByCustomer(self, SSN):
         customer_history = list()
         for order in self.__Orders:
-            if order.getCustomerSSN == SSN:
+            if int(order.getCustomerSSN()) == int(SSN):
                 customer_history.append(order)
         return customer_history
 

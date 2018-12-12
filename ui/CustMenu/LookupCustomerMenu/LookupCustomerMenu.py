@@ -38,7 +38,7 @@ class LookUpCustomerMenu:
                 if selection == "1":
                     self.__manager.gotoClass("updateinformation")
                 elif selection == "2":
-                    self.__manager.gotoClass("customerorderhistory")
+                    self.__manager.gotoClass("lookupcustomerhistory")
                 elif selection == "3":
                     self.__manager.getCustomerManager().removeCustomer(customer)
                     self.__manager.clearMetadata()
