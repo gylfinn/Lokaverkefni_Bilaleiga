@@ -15,8 +15,9 @@ class Header:
             admintag = ""
 
         os.system('cls')
-        print("------------------------------------")
-        print("Welcome {}{} {}".format(str(self.__fullname), admintag, time.ctime()))
+        print('-' * 75)
+        print("Welcome {}{}{}{}".format(str(self.__fullname), admintag,"CAR RENTAL".rjust(10), time.ctime().rjust(10)))
+        print('-' * 75)
         return
 
     def setIsAdmin(self, isadmin):
