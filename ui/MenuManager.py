@@ -28,6 +28,7 @@ from ui.CarMenu.FleetMenu.FleetMenu import FleetMenu
 from ui.CarMenu.FleetMenu.Overview import Overview 
 from ui.CarMenu.FleetMenu.Available import Available
 from ui.CarMenu.FleetMenu.CurrentRentals import CurrentRentals
+from ui.CarMenu.FleetMenu.ReturnCar import ReturnCar
 from ui.Header import Header
 
 EMPTY = "EMPTY"
@@ -54,6 +55,7 @@ AVAILABLE = "available"
 CURRENTRENTALS = "currentrentals"
 OVERVIEW = "overview"
 PRICECALCULATOR = "pricecalculator"
+RETURNCAR = "returncar"
 
 #Menu manager sem sér um að ferðast á milli UI klasa.
 #Er kallað á hann með location sem er klasinn sem á að fara í
@@ -91,6 +93,7 @@ class MenuManager:
         self.__overview = Overview(self)
         self.__metadata = None
         self.__price_calculator = PriceCalculator.PriceCalculator(self)
+        self.__return_car = ReturnCar(self)
 
 
         #--Start up at login loaction--
@@ -180,3 +183,5 @@ class MenuManager:
             self.__current_rentals.currentRentals()
         elif self.__location == PRICECALCULATOR:
             self.__price_calculator.priceCalculator()
+        elif self.__location == RETURNCAR:
+            self.__return_car.returnCar()
