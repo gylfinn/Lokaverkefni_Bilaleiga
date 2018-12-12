@@ -18,6 +18,8 @@ class Login:
         is_admin = self.__check_login_info.check_admin(self.__raw_data, username)
         if is_admin:
             return True
+        else:
+            return False
 
     def getFullname(self, username):
         fullname = self.__check_login_info.get_fullname(self.__raw_data, username)
