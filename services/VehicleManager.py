@@ -63,6 +63,17 @@ class VehicleManager(object):
             return True
         else:
             return False
+
+    def changeVehicleStatus(self, registration_number):
+        # vehid = self.findVehicleID(registration_number)
+        for vehicle in self.__Vehicles_Data:
+            if vehicle[REGISTRATION_NUMBER] == registration_number:
+                if vehicle[RENTED] == 'True':
+                    vehicle[RENTED] = 'False'
+                    self.save()
+                    return True
+            else:
+                return
     def findVehicle(self, registration_number):
         for vehicle in self.__Vehicles:
             if vehicle.getRegistrationNum().lower() == registration_number.lower():
