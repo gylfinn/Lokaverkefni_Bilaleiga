@@ -18,11 +18,11 @@ class Customer:
     def getPhoneNumber(self):
         return self.__phone_number
     def setPhoneNumber(self, new_phone_number):
-        self.__phonenumber = new_phone_number
+        self.__phone_number = new_phone_number
     def getDriversLicenseNumber(self):
         return self.__driverslicense_number
-    def setDriversLicenseNumber(self, new_drivers_license_number):
-        self.__driverslicense_number = new_drivers_license_number
+    def setDriversLicenseNumber(self, new_driverslicense_number):
+        self.__driverslicense_number = new_driverslicense_number
     
     def __str__(self):
         return "Name: {}, SSN: {}, Address: {}, Phone number: {}, Driverslicense number:{}".format(self.getName(), self.getSSN(), self.getAddress(), self.getPhoneNumber(), self.getDriversLicenseNumber())

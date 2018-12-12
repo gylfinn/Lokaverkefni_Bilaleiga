@@ -3,6 +3,7 @@ from ui.LoginMenu import LoginMenu
 
 from services.VehicleManager import VehicleManager
 from services.OrderManager import OrderManager
+from services.CustomerManager import CustomerManager
 
 from ui.OrderMenu.OrderMenu import OrderMenu
 from ui.OrderMenu.LookupOrderMenu import LookupOrderMenu
@@ -66,8 +67,9 @@ class MenuManager:
         self.__lookup_order_menu = LookupOrderMenu.LookupOrderMenu(self)
         self.__upcoming_orders = UpcomingOrders.UpcomingOrders(self)
         self.__new_order = NewOrder.NewOrder(self)
-        self.__VehicleManager = VehicleManager()
-        self.__OrderManager = OrderManager()
+        self.__vehicle_manager = VehicleManager()
+        self.__order_manager = OrderManager()
+        self.__customer_manager = CustomerManager()
         self.__lookup_customer_menu = LookUpCustomerMenu(self)
         self.__update_information = UpdateInformation(self)
         self.__look_up_customer = LookUpCustomer(self)
@@ -103,10 +105,13 @@ class MenuManager:
         self.__metadata = None
 
     def getVehicleManager(self):
-        return self.__VehicleManager
+        return self.__vehicle_manager
 
     def getOrderManager(self):
-        return self.__OrderManager
+        return self.__order_manager
+    
+    def getCustomerManager(self):
+        return self.__customer_manager
 
     def gotoClass(self, location):
         self.__last_location = self.__location

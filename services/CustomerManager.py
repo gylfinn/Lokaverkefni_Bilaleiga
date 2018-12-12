@@ -7,7 +7,7 @@ SSN = 1
 ADDRESS = 2
 PHONENUMBER = 3
 DRIVERSLICENSENUMBER = 4
-CUSTOMERS_FILE = "customer.csv"
+CUSTOMERS_FILE = "customers.csv"
 class CustomerManager(object):
     def __init__(self):
         self.__customer_data = GetData(CUSTOMERS_FILE).readData()
@@ -23,7 +23,7 @@ class CustomerManager(object):
             ssn = int(line[SSN])
             address = line[ADDRESS]
             phone_number = int(line[PHONENUMBER])
-            driverslicense_number = int(line([DRIVERSLICENSENUMBER]))
+            driverslicense_number = int(line[DRIVERSLICENSENUMBER])
             customer = Customer(name, ssn, address, phone_number,driverslicense_number)
             self.__customers.append(customer)
     def registerNewCustomer(self, name, ssn, address, phone_number, driverslicense_number):
