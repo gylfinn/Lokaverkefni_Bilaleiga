@@ -45,8 +45,18 @@ class NewOrder:
                     else:
                         self.__manager.gotoClass("ordermenu")
 
-            print(vehicle)    
-            customer_ssn = input("Customer SSN: ") ##Check if Cust Exists
+            print(Fore.BLUE, vehicle, Fore.WHITE)
+            customer = None
+            while not customer:
+                customer_ssn = input("Customer SSN: ")
+                customer = self.__manager.getCustomerManager().findCustomer(customer_ssn)
+                if not customer:
+                    print(Fore.RED, "Cannot find customer with SSN '{}'".format(customer_ssn),Fore.WHITE)
+                    ans = input("Do you want to register a new customer? (Y/N)")
+                    if ans.lower() == "y":
+                        self.__manager.gotoClass("registernewcustomer")
+            print(Fore.YELLOW, customer, Fore.WHITE)
+
             date_from = input("Date From: ")
             date_to = input("Date To: ")
             total_price = input("Total price: ")
