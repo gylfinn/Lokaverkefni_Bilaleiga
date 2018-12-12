@@ -31,4 +31,5 @@ class ChangeOrder:
             if change_order_menu_selection == "9":
                 self.__manager.gotoClass("lookupordermenu")
             elif change_order_menu_selection == "1":
-                self.__manager.gotoClass("lookupordermenu")
+                self.__manager.getOrderManager().save()
+                self.__manager.gotoClass("ordermenu")

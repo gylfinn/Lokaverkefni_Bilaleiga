@@ -1,11 +1,14 @@
 import os
 from colorama import Fore
+# from ui.Header import Header
 
 class MainMenu:
     def __init__(self, manager):
         self.__manager = manager
     def main_menu(self):
+
         os.system('cls')
+        self.__manager.printHeader()
         selection = ""
         while(selection !="9"):
             print("Main Menu")
