@@ -1,6 +1,25 @@
 # Lokaverkefni_Bilaleiga
 3 Vikna verkefni.
 
+# Stulla info
+Til þess að einfalda þér yfirferðina: 
+
+Dæmi um notendur sem eru til í kerfinu;
+user: admin , pw: admin (Admin réttindi)
+user: stulliklikk , pw: gefykkur10 (Admin réttindi)
+user: heida18 , pw: pass123 (Ekki admin réttindi)
+
+Dæmi um viðskiptavini sem eru til í kerfinu:
+David Beckham, SSN: 1111111111
+Jón Jónsson, SSN: 1312992020
+
+Dæmi um Car Registration number á bíl í kerfinu:
+Bíll í leigu: JKE04 , Yaris
+Bíll á lausu: PO996 , Subaru Impreza
+
+Dæmi um Order ID (til að fletta upp pöntun):
+Tölur frá 1 - 8
+
 # A-Kröfur
 - Birta alla lausa bíla: ✔
 - Birta alla bíla sem eru í útleigu: ✔
