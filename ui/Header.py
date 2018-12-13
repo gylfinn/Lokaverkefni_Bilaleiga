@@ -68,7 +68,7 @@ class Header:
         return dirlocation
 
     def printLoginHeader(self):
-        os.system('cls')
+        os.system('cls||clear')
         print('-' * 75)
         print("{}{}".format("PLEASE LOG IN TO CONTINUE".ljust(30), time.ctime().rjust(30)))
         print('-' * 75)
@@ -82,7 +82,7 @@ class Header:
 
         displayname = self.__fullname + admintag
 
-        os.system('cls')
+        os.system('cls||clear')
         print('-' * 75)
         print("Welcome {}{}".format(displayname.ljust(30), time.ctime().rjust(30)))
         print('-' * 75)
