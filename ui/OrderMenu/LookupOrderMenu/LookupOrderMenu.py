@@ -23,7 +23,7 @@ class LookupOrderMenu:
             print(Fore.GREEN,end="")
             print("1. Change order")
             print("2. Cancel Order")
-            print("3. Chargeback Order")
+            # print("3. Chargeback Order")
             print(Fore.RED,end="")
             print("9. Back")
             print(Fore.WHITE,end="")
@@ -33,8 +33,8 @@ class LookupOrderMenu:
                 self.__manager.gotoClass("changeorder")
             elif lookup_order_selection == "2":
                 self.__manager.gotoClass("cancelorder")
-            elif lookup_order_selection == "3":    
-                self.__manager.gotoClass("chargebackorder")
+            # elif lookup_order_selection == "3":    
+            #     self.__manager.gotoClass("chargebackorder")
             elif lookup_order_selection == "9":
                 self.__manager.clearMetadata() #Setja Metadata aftur í None svo engir lúðar fari að nota það aftur xD:PXOXOXOXOX
                 self.__manager.gotoClass("ordermenu")

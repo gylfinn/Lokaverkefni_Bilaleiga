@@ -9,7 +9,7 @@ from ui.OrderMenu.OrderMenu import OrderMenu
 from ui.OrderMenu.LookupOrderMenu import LookupOrderMenu
 from ui.OrderMenu.LookupOrderMenu.CancelOrder import CancelOrder
 from ui.OrderMenu.LookupOrderMenu.ChangeOrder import ChangeOrder
-from ui.OrderMenu.LookupOrderMenu.ChargebackOrder import ChargebackOrder
+# from ui.OrderMenu.LookupOrderMenu.ChargebackOrder import ChargebackOrder
 from ui.OrderMenu.UpcomingOrders import UpcomingOrders
 from ui.OrderMenu.NewOrder import NewOrder
 from ui.OrderMenu.PriceCalculator import PriceCalculator 
@@ -25,11 +25,12 @@ from ui.CarMenu.CarMenu import CarMenu
 from ui.CarMenu.CarAdministrationMenu.CarAdministrationMenu import CarAdministrationMenu
 from ui.CarMenu.CarAdministrationMenu.DeregisterCar import DeregisterCar
 from ui.CarMenu.CarAdministrationMenu.RegisterNewCar import RegisterNewCar
-from ui.CarMenu.FleetMenu.FleetMenu import FleetMenu
+from ui.CarMenu.FleetMenu.FleetMenu import FleetMenu 
 from ui.CarMenu.FleetMenu.Overview import Overview 
 from ui.CarMenu.FleetMenu.Available import Available
 from ui.CarMenu.FleetMenu.CurrentRentals import CurrentRentals
 from ui.CarMenu.FleetMenu.ReturnCar import ReturnCar
+from ui.CarMenu.FleetMenu.RentCar import RentCar
 from ui.Header import Header
 
 EMPTY = "EMPTY"
@@ -58,6 +59,7 @@ CURRENTRENTALS = "currentrentals"
 OVERVIEW = "overview"
 PRICECALCULATOR = "pricecalculator"
 RETURNCAR = "returncar"
+RENTCAR = "rentcar"
 
 #Menu manager sem sér um að ferðast á milli UI klasa.
 #Er kallað á hann með location sem er klasinn sem á að fara í
@@ -85,7 +87,7 @@ class MenuManager:
         self.__register_customer = RegisterCustomer(self)
         self.__cancel_order = CancelOrder(self)
         self.__change_order = ChangeOrder(self)
-        self.__chargeback_order = ChargebackOrder(self)
+        # self.__chargeback_order = ChargebackOrder(self)
         self.__car_menu = CarMenu(self)
         self.__car_administration_menu = CarAdministrationMenu(self)
         self.__register_new_car_menu = RegisterNewCar(self)
@@ -97,6 +99,7 @@ class MenuManager:
         self.__metadata = None
         self.__price_calculator = PriceCalculator.PriceCalculator(self)
         self.__return_car = ReturnCar(self)
+        self.__rent_car = RentCar(self)
 
 
         #--Start up at login loaction--
@@ -168,8 +171,8 @@ class MenuManager:
             self.__cancel_order.cancelOrder()
         elif self.__location == CHANGEORDER:
             self.__change_order.changeOrder()
-        elif self.__location == CHARGEBACKORDER:
-            self.__chargeback_order.chargebackOrder()
+        # elif self.__location == CHARGEBACKORDER:
+        #     self.__chargeback_order.chargebackOrder()
         elif self.__location == CARMENU:
             self.__car_menu.carMenu()
         elif self.__location == CARADMINISTRATIONMENU:
@@ -190,3 +193,5 @@ class MenuManager:
             self.__price_calculator.priceCalculator()
         elif self.__location == RETURNCAR:
             self.__return_car.returnCar()
+        elif self.__location == RENTCAR:
+            self.__rent_car.rentCar()

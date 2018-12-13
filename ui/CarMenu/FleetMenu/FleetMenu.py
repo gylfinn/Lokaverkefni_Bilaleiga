@@ -15,6 +15,7 @@ class FleetMenu:
             print("2. Current Rentals")
             print("3. Available")
             print("4. Return Car")
+            print("5. Rent Car")
             print(Fore.RED,end="")
             print("9. Go Back")
             print(Fore.WHITE,end="")
@@ -28,5 +29,7 @@ class FleetMenu:
                 self.__manager.gotoClass("available")
             elif fleet_menu_selection == "4":
                 self.__manager.gotoClass("returncar")
+            elif fleet_menu_selection == "5":
+                self.__manager.gotoClass("rentcar")
             elif fleet_menu_selection == "9":
                 self.__manager.gotoClass("carmenu")

@@ -27,6 +27,6 @@ class UpdateInformation:
             if information_to_update == "9":
                 self.__manager.gotoClass("custmenu")
             elif information_to_update == "1":
+                self.__manager.getCustomerManager().save()
                 self.__manager.gotoClass("custmenu")
-                customer.save()
-        
+                

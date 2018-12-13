@@ -54,7 +54,7 @@ class NewOrder:
                     print(Fore.RED, "Cannot find customer with SSN '{}'".format(customer_ssn),Fore.WHITE)
                     ans = input("Do you want to register a new customer? (Y/N)")
                     if ans.lower() == "y":
-                        self.__manager.gotoClass("registernewcustomer")
+                        self.__manager.gotoClass("registercustomer")
             print(Fore.YELLOW, customer, Fore.WHITE)
 
             date_from = input("Date From: ")

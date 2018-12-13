@@ -72,8 +72,12 @@ class VehicleManager(object):
                     vehicle[RENTED] = 'False'
                     self.save()
                     return True
-            else:
-                return
+                elif vehicle[RENTED] == 'False':
+                    vehicle[RENTED] = 'True'
+                    self.save()
+                    return True
+        else:
+            return
     def findVehicle(self, registration_number):
         for vehicle in self.__Vehicles:
             if vehicle.getRegistrationNum().lower() == registration_number.lower():

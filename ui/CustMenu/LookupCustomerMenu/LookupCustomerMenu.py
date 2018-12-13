@@ -42,6 +42,14 @@ class LookUpCustomerMenu:
                 elif selection == "3":
                     self.__manager.getCustomerManager().removeCustomer(customer)
                     self.__manager.clearMetadata()
+                    print("Customer Successfully Removed")
+                    print("Type in 1 to lookup another customer")
+                    print("Type in any other key to go back")
+                    cust_input = input()
+                    if cust_input == '1':
+                        self.__manager.gotoClass("lookupcustomer")
+                    else:
+                        self.__manager.gotoClass("custmenu")
                 elif selection == "9":
                     self.__manager.gotoClass("custmenu")
                     self.__manager.clearMetadata()
