@@ -13,9 +13,11 @@ class PriceCalculator:
             try:
                 days = int(input("How many days? "))
                 print("What type of car?")
+                print(Fore.GREEN,end="")
                 print("1. Hatchback")
                 print("2. Sedan")
                 print("3. SUV")
+                print(Fore.WHITE,end="")
                 type_of_car = int(input())
                 price = self.__calculate_price.calculatePrice(days, type_of_car)
                 os.system('cls')
