@@ -12,6 +12,7 @@ class LookUpCustomerMenu:
     def __init__(self, manager):
         self.__manager = manager
     def customerMenuSelection(self):
+            self.__manager.printHeader()
             selection = ""
             SSN_input = input("Customer SSN: ")
             customer = self.__manager.getCustomerManager().findCustomer(SSN_input)

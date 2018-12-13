@@ -52,6 +52,3 @@ class Order():
     def __str__(self):
         return "Order ID: {}, Car registration number: {} Customer SSN: {} Date: From {} to {}, Price:{}".format(self.getOrderid(), self.getCarRegistration(), self.getCustomerSSN(), self.getDateFrom(), self.getDateTo(), self.getPrice())
     
-    
-    
-    
