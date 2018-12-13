@@ -25,4 +25,4 @@ class Customer:
         self.__driverslicense_number = new_driverslicense_number
     
     def __str__(self):
-        return "Name: {}, SSN: {}, Address: {}, Phone number: {}, Driverslicense number:{}".format(self.getName(), self.getSSN(), self.getAddress(), self.getPhoneNumber(), self.getDriversLicenseNumber())
+        return "Name: {}, SSN: {}, Address: {}, Phone number: {}, Driverslicense number: {}".format(self.getName(), self.getSSN(), self.getAddress(), self.getPhoneNumber(), self.getDriversLicenseNumber())

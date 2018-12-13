@@ -173,8 +173,6 @@ class MenuManager:
             self.__cancel_order.cancelOrder()
         elif self.__location == CHANGEORDER:
             self.__change_order.changeOrder()
-        #elif self.__location == CHARGEBACKORDER:
-        #    self.__chargeback_order.chargebackOrder()
         elif self.__location == CARMENU:
             self.__car_menu.carMenu()
         elif self.__location == CARADMINISTRATIONMENU:
@@ -195,3 +193,5 @@ class MenuManager:
             self.__price_calculator.priceCalculator()
         elif self.__location == RETURNCAR:
             self.__return_car.returnCar()
+        elif self.__location == RENTCAR:
+            self.__rent_car.rentCar()

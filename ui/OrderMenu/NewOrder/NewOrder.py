@@ -33,7 +33,7 @@ class NewOrder:
                     else:
                         self.__manager.gotoClass("ordermenu")
                 if vehicle and vehicle.isRented():
-                    print("Vehicle is not avilable")
+                    print("Vehicle is not available")
                     print(Fore.GREEN,end="")
                     print("1. Try Again")
                     print(Fore.RED,end="")
@@ -57,10 +57,13 @@ class NewOrder:
                         self.__manager.gotoClass("registercustomer")
             print(Fore.YELLOW, customer, Fore.WHITE)
 
-            date_from = input("Date From: ")
-            date_to = input("Date To: ")
+            date_from = input("Date From: (dd/mm/yy hh:mm)\n")
+            date_to = input("Date To: (dd/mm/yy hh:mm)\n")
             total_price = input("Total price: ")
             new_order = self.__manager.getOrderManager().createOrder(orderid, car_regnum, customer_ssn, date_from, date_to, total_price)
+            if new_order:
+                self.__manager.getVehicleManager().changeVehicleStatus(car_regnum)
+            self.__manager.printHeader()
             print(new_order)
             print("9. Back")
             upcoming_order_menu_selection = input()
