@@ -9,6 +9,7 @@ class RentCar:
         self.__manager.printHeader()
         menu_selection = ""
         while(menu_selection !="9"):
+            self.__manager.getVehicleManager().loadVehicles()
             Vehicles = self.__manager.getVehicleManager().getAvailable()
             print(Fore.YELLOW,end="")
             for vehicle in Vehicles:

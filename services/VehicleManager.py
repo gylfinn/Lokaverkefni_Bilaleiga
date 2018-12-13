@@ -22,6 +22,8 @@ class VehicleManager(object):
         self.loadAvailableVehicles()
 
     def loadVehicles(self):
+        self.__Vehicles_Data = GetData(VEHICLE_FILE).readData()
+        self.__Vehicles.clear()
         for line in self.__Vehicles_Data:
             regnum = line[REGISTRATION_NUMBER]
             if line[RENTED] == 'True':
@@ -36,11 +38,13 @@ class VehicleManager(object):
             self.__Vehicles.append(car)
 
     def loadAvailableVehicles(self):
+        self.__AvailableVehicles.clear()
         for vehicle in self.__Vehicles:
             if not vehicle.isRented():
                 self.__AvailableVehicles.append(vehicle)
 
     def loadRentedVehicles(self):
+        self.__VehiclesInRent.clear()
         for vehicle in self.__Vehicles:
             if vehicle.isRented():
                 self.__VehiclesInRent.append(vehicle)
