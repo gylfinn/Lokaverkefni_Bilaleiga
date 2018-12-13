@@ -25,7 +25,7 @@ from ui.CarMenu.CarMenu import CarMenu
 from ui.CarMenu.CarAdministrationMenu.CarAdministrationMenu import CarAdministrationMenu
 from ui.CarMenu.CarAdministrationMenu.DeregisterCar import DeregisterCar
 from ui.CarMenu.CarAdministrationMenu.RegisterNewCar import RegisterNewCar
-from ui.CarMenu.FleetMenu.FleetMenu import FleetMenu 
+from ui.CarMenu.FleetMenu.FleetMenu import FleetMenu
 from ui.CarMenu.FleetMenu.Overview import Overview 
 from ui.CarMenu.FleetMenu.Available import Available
 from ui.CarMenu.FleetMenu.CurrentRentals import CurrentRentals
@@ -101,7 +101,6 @@ class MenuManager:
         self.__return_car = ReturnCar(self)
         self.__rent_car = RentCar(self)
 
-
         #--Start up at login loaction--
         self.gotoClass(LOGINMENU)
 
@@ -137,7 +136,10 @@ class MenuManager:
         self.__header.setIsAdmin(self.__isadmin)
 
     def printHeader(self):
-        print(self.__header.printHeader())
+        self.__header.printHeader(self.__location)
+
+    def printLoginHeader(self):
+        self.__header.printLoginHeader()
 
     def gotoClass(self, location):
         self.__last_location = self.__location
@@ -171,8 +173,8 @@ class MenuManager:
             self.__cancel_order.cancelOrder()
         elif self.__location == CHANGEORDER:
             self.__change_order.changeOrder()
-        # elif self.__location == CHARGEBACKORDER:
-        #     self.__chargeback_order.chargebackOrder()
+        #elif self.__location == CHARGEBACKORDER:
+        #    self.__chargeback_order.chargebackOrder()
         elif self.__location == CARMENU:
             self.__car_menu.carMenu()
         elif self.__location == CARADMINISTRATIONMENU:
@@ -193,5 +195,3 @@ class MenuManager:
             self.__price_calculator.priceCalculator()
         elif self.__location == RETURNCAR:
             self.__return_car.returnCar()
-        elif self.__location == RENTCAR:
-            self.__rent_car.rentCar()

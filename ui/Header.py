@@ -8,17 +8,31 @@ class Header:
         self.__isadmin = False
         self.__fullname = ""
     
-    def printHeader(self):
+
+    def printLoginHeader(self):
+        os.system('cls')
+        print('-' * 75)
+        print("{}{}".format("PLEASE LOG IN TO CONTINUE".ljust(30), time.ctime().rjust(30)))
+        print('-' * 75)
+
+    def printHeader(self, location):
+
+        location = "mAINMENU"
+
         if self.__isadmin:
             admintag = "(A)"
         else:
             admintag = ""
 
+        displayname = self.__fullname + admintag
+
+        #location = self.GetLocation(location)
+
         os.system('cls')
         print('-' * 75)
-        print("Welcome {}{}{}{}".format(str(self.__fullname), admintag,"CAR RENTAL".rjust(10), time.ctime().rjust(10)))
+        print("Welcome {}{}".format(displayname.ljust(30), time.ctime().rjust(30)))
         print('-' * 75)
-        return
+        print(location)
 
     def setIsAdmin(self, isadmin):
         if isadmin:

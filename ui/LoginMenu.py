@@ -13,7 +13,7 @@ class LoginMenu:
         self.__getlogininfo = IsInfoValid()
         self.__manager = mananger
     def login_menu(self):
-        os.system('cls') #  hreinsar console gluggann
+        self.__manager.printLoginHeader()
         while True:
             print("Please enter your credentials.")
             username = input("Username: ")
