@@ -9,6 +9,65 @@ class Header:
         self.__fullname = ""
     
 
+    def GetLocation(self, location):
+        dirlocation = "Main Menu"
+        if location == "EMPTY":
+            return dirlocation
+        elif location == "mainmenu":
+            return dirlocation
+        elif location == "ordermenu":
+            dirlocation = "Main Menu > Orders"
+
+        elif location == "custmenu":
+            dirlocation = "Main Menu > Customers"
+
+        elif location == "carmenu":
+            dirlocation = "Main Menu > Cars"
+
+        elif location == "upcomingorders":
+            dirlocation = "Main Menu > Orders > Upcoming orders"
+
+        elif location == "neworder":
+            dirlocation = "Main Menu > Orders > New Order"
+            
+        elif location == "lookupordermenu":
+            dirlocation = "Main Menu > Orders > Lookup"
+
+        elif location == "changeorder":
+            dirlocation = "Main Menu > Orders > Lookup > Change order"
+        elif location == "cancelorder":
+            dirlocation = "Main Menu > Orders > Lookup > Cancel order"
+        elif location == "pricecalculator":
+            dirlocation = "Main Menu > Orders > Price Calculator"
+        elif location == "fleetmenu":
+            dirlocation = "Main Menu > Cars > Fleet"
+        elif location == "caradministrationmenu":
+            dirlocation = "Main Menu > Cars > Administration"
+        elif location == "registernewcar":
+            dirlocation = "Main Menu > Cars > Administration > Register"
+        elif location == "deregistercar":
+            dirlocation = "Main Menu > Cars > Administration > Deregister"
+        elif location == "overview":
+            dirlocation = "Main Menu > Cars > Fleet > Overview"
+        elif location == "currentrentals":
+            dirlocation = "Main Menu > Cars > Fleet > Current Rentals"
+        elif location == "available":
+            dirlocation = "Main Menu > Cars > Fleet > Available cars"
+        elif location == "returncar":
+            dirlocation = "Main Menu > Cars > Fleet > Return car"
+        elif location == "rentcar":
+            dirlocation = "Main Menu > Cars > Fleet > Rent car"
+        elif location == "lookupcustomermenu":
+            dirlocation = "Main Menu > Customers > Lookup"
+        elif location == "registercustomer":
+            dirlocation = "Main Menu > Customers > Register Customer"
+        elif location == "updateinformation":
+            dirlocation = "Main Menu > Customers > Lookup > Update"
+        elif location == "":
+            dirlocation = ""
+        
+
+
     def printLoginHeader(self):
         os.system('cls')
         print('-' * 75)
