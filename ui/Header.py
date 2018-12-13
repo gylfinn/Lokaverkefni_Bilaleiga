@@ -65,8 +65,7 @@ class Header:
             dirlocation = "Main Menu > Customers > Lookup > Update"
         elif location == "":
             dirlocation = ""
-        
-
+        return dirlocation
 
     def printLoginHeader(self):
         os.system('cls')
@@ -75,17 +74,13 @@ class Header:
         print('-' * 75)
 
     def printHeader(self, location):
-
-        location = "mAINMENU"
-
+        location = self.GetLocation(location)
         if self.__isadmin:
             admintag = "(A)"
         else:
             admintag = ""
 
         displayname = self.__fullname + admintag
-
-        #location = self.GetLocation(location)
 
         os.system('cls')
         print('-' * 75)

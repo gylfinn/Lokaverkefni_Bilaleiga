@@ -6,7 +6,7 @@ class CarMenu:
     def __init__(self, manager):
         self.__manager = manager
     def carMenu(self):
-        os.system('cls')
+        self.__manager.printHeader()
         car_menu_selection = ""
         while(car_menu_selection !="9"):
             print("Car Menu")
