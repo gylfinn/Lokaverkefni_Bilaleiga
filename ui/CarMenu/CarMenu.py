@@ -17,7 +17,6 @@ class CarMenu:
             print("9. Back")
             print(Fore.WHITE,end="")
             car_menu_selection = input()
-            os.system('cls')
             if car_menu_selection == "1":
                 self.__manager.gotoClass("caradministrationmenu")
             elif car_menu_selection == "2":

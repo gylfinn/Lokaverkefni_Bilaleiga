@@ -5,7 +5,7 @@ class Available:
     def __init__(self, manager):
         self.__manager = manager
     def available(self):
-        os.system('cls')
+        self.__manager.printHeader()
         menu_selection = ""
         while(menu_selection !="9"):
             Vehicles = self.__manager.getVehicleManager().getAvailable()

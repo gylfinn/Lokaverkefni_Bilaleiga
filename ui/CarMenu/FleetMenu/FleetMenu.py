@@ -6,7 +6,7 @@ class FleetMenu:
     def __init__(self, manager):
         self.__manager = manager
     def fleetMenu(self):
-        os.system('cls')
+        self.__manager.printHeader()
         fleet_menu_selection = ""
         while(fleet_menu_selection !="9"):
             print("Fleet Menu")
