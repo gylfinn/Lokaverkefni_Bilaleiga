@@ -87,6 +87,8 @@ class Header:
         print("Welcome {}{}".format(displayname.ljust(30), time.ctime().rjust(30)))
         print('-' * 75)
         print(location)
+        print('-' * 75)
+        print("")
 
     def setIsAdmin(self, isadmin):
         if isadmin:
