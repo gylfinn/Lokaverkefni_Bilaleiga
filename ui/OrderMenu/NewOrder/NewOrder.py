@@ -1,5 +1,6 @@
 import os
 from services.servicehelpers.Validator import Validator
+from datetime import datetime
 from colorama import Fore
 
 #Þessi klasi kallar tekur við info um nýtt order, sendir það svo til services sem skrifar í Repo layer
@@ -57,8 +58,23 @@ class NewOrder:
                         self.__manager.gotoClass("registercustomer")
             print(Fore.YELLOW, customer, Fore.WHITE)
 
-            date_from = input("Date From: (dd/mm/yy hh:mm)\n")
-            date_to = input("Date To: (dd/mm/yy hh:mm)\n")
+            date_from_validation = None
+            while not date_from_validation:
+                date_from = input("Date From: (dd/mm/yy hh:mm)\n")
+                try:
+                    date_from_validation = datetime.strptime(date_from, "%d/%m/%y %H:%M")
+                except ValueError as e:
+                    date_from_validation = None
+                    print(Fore.RED, e)
+
+            date_to_validation = None
+            while not date_to_validation:
+                date_to = input("Date To: (dd/mm/yy hh:mm)\n")
+                try:
+                    date_to_validation = datetime.strptime(date_to, "%d/%m/%y %H:%M")
+                except ValueError as e:
+                    date_to_validation = None
+                    print(Fore.RED, e)
             total_price = input("Total price: ")
             new_order = self.__manager.getOrderManager().createOrder(orderid, car_regnum, customer_ssn, date_from, date_to, total_price)
             if new_order:
