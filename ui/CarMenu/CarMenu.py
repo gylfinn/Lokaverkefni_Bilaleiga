@@ -9,7 +9,6 @@ class CarMenu:
         self.__manager.printHeader()
         car_menu_selection = ""
         while(car_menu_selection !="9"):
-            print("Car Menu")
             print(Fore.GREEN,end="")
             print("1. Car Administration")
             print("2. Fleet Manager")
