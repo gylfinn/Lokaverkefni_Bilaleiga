@@ -1,5 +1,6 @@
 import os
 from services.CalculatePrice import CalculatePrice
+from colorama import Fore
 
 class PriceCalculator: 
     def __init__(self, manager):
@@ -21,8 +22,11 @@ class PriceCalculator:
                 print("The Price of this Order would be {} dollars".format(price))
             except ValueError:
                 print("Only enter numbers")
-
-            print("Press 1 to calculate again, any other key to go back\n")
+            print(Fore.GREEN,end="")
+            print("Press 1 to calculate again ")
+            print(Fore.RED,end="")
+            print("Press any other key to go back\n")
+            print(Fore.WHITE,end="")
             pricecalc_confirmation = input()
             if pricecalc_confirmation == "1":
                 self.__manager.gotoClass("pricecalculator")
