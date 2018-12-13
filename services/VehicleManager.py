@@ -69,11 +69,19 @@ class VehicleManager(object):
         for vehicle in self.__Vehicles_Data:
             if vehicle[REGISTRATION_NUMBER] == registration_number:
                 if vehicle[RENTED] == 'True':
-                    vehicle[RENTED] = 'False'
+                    vehicle[RENTED] = False
                     self.save()
                     return True
                 elif vehicle[RENTED] == 'False':
-                    vehicle[RENTED] = 'True'
+                    vehicle[RENTED] = True
+                    self.save()
+                    return True
+                elif vehicle[RENTED] == True:
+                    vehicle[RENTED] = False
+                    self.save()
+                    return True
+                elif vehicle[RENTED] == False:
+                    vehicle[RENTED] = True
                     self.save()
                     return True
         else:
