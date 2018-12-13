@@ -1,14 +1,8 @@
-● Reikna hvað leiga kostar án breytilegs kostnaðar (svo sem tryggingu)
-● Skila bíl í lok leigutímabils
-● Villumeðhöndlun á innslætti á kennitölu, dagsetningum og öðrum lykilgildum
+1. Skrifa í README og Doc skjal hvaða AUKA kröfur við erum með í kerfinu.
+    taka ALLT fram, validation, auto increment á csv skjali, ALLT SEM GÆTI VERIÐ BONUS POINTS
 
-* Change Order virkar ekki
-* Chargeback Order virkar ekki
-* Customer Order History Vantar
-* Þegar ný pöntun er skráð verður að breyta þeim bíl í rented í csv skránni
-* að skrá nýtt order er maður beðinn um að slá inn OrderID, autopopulate???
-* Þegar þú eyðir David Beckham, þá kemur hann samt upp í lista af VV
-* Það er hægt að registera nytt vehicle þó að skráninganumerið sé nu þegar skráð LAGA
-* Það er hægt að registera nyjan customer þá að kennitalan sé nú þegar i notkun LAGA
-* Kanski hafa try except þegar nýskráð pöntun til að passa að þetta sé skrifað rétt s.s 01/01/01 12:00
-* Hægt er að nota datetime import-ið til að check á þessari villu hér fyrir ofan
+2. Setja LEGIT info inní öll CSV skjölin. Það info sem við viljum að dómarinn sjái skjalið með
+
+3. Fara VEL yfir allt forritið og VILLUTÉKKA smá villur
+
+4. MYNDBANDSKYNNING!!
