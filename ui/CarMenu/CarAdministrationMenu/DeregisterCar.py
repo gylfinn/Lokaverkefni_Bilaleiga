@@ -9,7 +9,7 @@ class DeregisterCar:
         deregister_menu_selection = ""
         while(deregister_menu_selection !="9"):
             vehicle_reg_num = input("Registration number of Vehicle: ")
-            os.system('cls') #registrationnumber,rented,modelyear,brand,price,type
+            self.__manager.printHeader() #registrationnumber,rented,modelyear,brand,price,type
             print("Registration number of Vehicle: {}".format(vehicle_reg_num))
             print(Fore.GREEN,end="")
             print("8. To Confirm")
