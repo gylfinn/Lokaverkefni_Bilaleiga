@@ -1,6 +1,8 @@
 import os
 from colorama import Fore
 from Models.Order import Order
+from datetime import datetime
+
 # Þessi klasi biður notanda að slá inn nýtt info um order
 # ef hann confirmar þá er kallað í service class sem skrifað nýja info í CSV
 # ef hann gerir back þá fer hann back duh

@@ -1,4 +1,5 @@
 from datetime import datetime
+import sys
 
 class Order():
     def __init__(self, order_id, car_registration_number, customer_SSN, date_from, date_to, total_price):
@@ -20,12 +21,25 @@ class Order():
         self.__customer_ssn = new_ssn
     def getDateFrom(self):
         return self.__date_from
+    #setDateFrom and setDateTo print out value error if typed in wrong.
     def setDateFrom(self, new_date):
-        self.__date_from = new_date
+        try:
+            if type(new_date) == str:
+                self.__date_from = datetime.strptime(new_date, "%d/%m/%y %H:%M")
+            else:
+                self.__date_from = new_date
+        except ValueError as e:
+            print(e)
     def getDateTo(self):
         return self.__date_to
     def setDateTo(self, new_date):
-        self.__date_to = new_date
+        try:
+            if type(new_date) == str:
+                self.__date_to = datetime.strptime(new_date, "%d/%m/%y %H:%M")
+            else:
+                self.__date_to = new_date
+        except ValueError as e:
+            print(e)
     def getPrice(self):
         return self.__total_price
     def setPrice(self, new_price):
