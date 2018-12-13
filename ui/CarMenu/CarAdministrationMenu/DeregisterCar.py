@@ -5,7 +5,7 @@ class DeregisterCar:
     def __init__(self, manager):
         self.__manager = manager
     def deregisterCar(self):
-        os.system('cls')
+        self.__manager.printHeader()
         deregister_menu_selection = ""
         while(deregister_menu_selection !="9"):
             vehicle_reg_num = input("Registration number of Vehicle: ")
