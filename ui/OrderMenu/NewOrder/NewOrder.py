@@ -11,7 +11,7 @@ class NewOrder:
         self.__manager = manager
 
     def newOrder(self):
-        os.system('cls')
+        self.__manager.printHeader()
         new_order_menu_selection = ""
         while(new_order_menu_selection !="9"):
             orderid = int(self.__manager.getOrderManager().getOrders()[-1].getOrderid())

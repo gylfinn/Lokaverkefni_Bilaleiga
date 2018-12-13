@@ -9,9 +9,8 @@ class CustMenu:
 
     def customerMenu(self):
         selection = ""
-        os.system('cls')
+        self.__manager.printHeader()
         while (selection != "9"):
-            print("Customers")
             print(Fore.GREEN,end="")
             print("1. Lookup Customer")
             print("2. Register Customer")
@@ -20,7 +19,7 @@ class CustMenu:
             print(Fore.WHITE,end="")
             print("--------------")
             selection = input()
-            os.system('cls')
+            self.__manager.printHeader()
 
             # kallar í annan UI klasa sem spyr um SSN og leita af viðskiptavininum
 

@@ -9,7 +9,7 @@ class ChangeOrder:
     def __init__(self, manager):
         self.__manager = manager
     def changeOrder(self):
-        os.system('cls')
+        self.__manager.printHeader()
         change_order_menu_selection = ""
         order = self.__manager.getMetadata()
         while(change_order_menu_selection !="9"):

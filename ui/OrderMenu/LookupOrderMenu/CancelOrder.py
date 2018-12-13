@@ -10,7 +10,7 @@ class CancelOrder:
         self.__manager = manager
 
     def cancelOrder(self):
-        os.system('cls')
+        self.__manager.printHeader()
         cancel_order_menu_selection = ""
         order = self.__manager.getMetadata()
         while(cancel_order_menu_selection !="9"):

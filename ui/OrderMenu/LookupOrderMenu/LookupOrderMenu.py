@@ -10,13 +10,13 @@ class LookupOrderMenu:
         self.__manager = manager
 
     def lookupOrderMenu(self):
-        os.system('cls')
+        self.__manager.printHeader()
         lookup_order_selection = ""
         order = self.__manager.getMetadata()
         order_id = input("Order ID: ")
         order = self.__manager.getOrderManager().findOrder(order_id)
         self.__manager.setMetadata(order)
-        os.system('cls')
+        self.__manager.printHeader()
 
         while(lookup_order_selection !="9") and order != None:
             print(Fore.YELLOW, order, Fore.WHITE)

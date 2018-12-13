@@ -7,7 +7,7 @@ class PriceCalculator:
         self.__manager = manager
         self.__calculate_price = CalculatePrice()
     def priceCalculator(self): 
-        os.system('cls')
+        self.__manager.printHeader()
         upcoming_order_menu_selection = ""
         while(upcoming_order_menu_selection !="9"):
             try:
@@ -20,7 +20,7 @@ class PriceCalculator:
                 print(Fore.WHITE,end="")
                 type_of_car = int(input())
                 price = self.__calculate_price.calculatePrice(days, type_of_car)
-                os.system('cls')
+                self.__manager.printHeader()
                 print("The Price of this Order would be {} dollars".format(price))
             except ValueError:
                 print("Only enter numbers")

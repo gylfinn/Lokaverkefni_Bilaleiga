@@ -7,7 +7,7 @@ class OrderMenu:
         self.__manager = manager
 
     def orderMenu(self):
-        os.system('cls')
+        self.__manager.printHeader()
         order_menu_selection = ""
         while(order_menu_selection !="9"):
             print("Order Menu")

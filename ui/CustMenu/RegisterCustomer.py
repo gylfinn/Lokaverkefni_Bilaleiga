@@ -8,13 +8,13 @@ class RegisterCustomer:
         self.__validator = Validator()
         
     def registerCustomer(self):
-        os.system('cls')
+        self.__manager.printHeader()
         name = input("Name: ")
         SSN = input("SSN: ")
         address = input("Address: ")
         phone_number = input("Phone number: ")
         driver_license_number = input("Driver License number: ")
-        os.system('cls')
+        self.__manager.printHeader()
         if self.__validator.ValidateSSN(SSN):
             self.__manager.getCustomerManager().registerNewCustomer(name, SSN, address, phone_number, driver_license_number)
             print("{}, SSN: {} registered succesfully!".format(name, SSN))

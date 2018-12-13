@@ -6,7 +6,7 @@ class UpdateInformation:
     def __init__(self, manager):
         self.__manager = manager
     def updateInformation(self):
-        os.system('cls')
+        self.__manager.printHeader()
         information_to_update = ""
         customer = self.__manager.getMetadata()
         while(information_to_update != "9"):

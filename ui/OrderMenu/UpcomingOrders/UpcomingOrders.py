@@ -9,7 +9,7 @@ class UpcomingOrders:
         self.__manager = manager
 
     def upcomingOrders(self):
-        os.system('cls')
+        self.__manager.printHeader()
         upcoming_order_menu_selection = ""
         while(upcoming_order_menu_selection !="9"):
             Orders = self.__manager.getOrderManager().getOrders(True)

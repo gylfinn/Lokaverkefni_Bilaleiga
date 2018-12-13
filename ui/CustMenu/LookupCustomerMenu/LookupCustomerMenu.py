@@ -16,7 +16,7 @@ class LookUpCustomerMenu:
             SSN_input = input("Customer SSN: ")
             customer = self.__manager.getCustomerManager().findCustomer(SSN_input)
             self.__manager.setMetadata(customer)
-            os.system('cls')
+            self.__manager.printHeader()
             while (selection != "9") and customer != None:
                 print(Fore.YELLOW,end="")
                 print("Name: {} ".format(customer.getName()))
@@ -33,7 +33,7 @@ class LookUpCustomerMenu:
                 print(Fore.WHITE,end="")
                 print("--------------")
                 selection = input()
-                os.system('cls')
+                self.__manager.printHeader()
 
                 if selection == "1":
                     self.__manager.gotoClass("updateinformation")
@@ -63,7 +63,7 @@ class LookUpCustomerMenu:
                 print("9. Go Back")
                 print(Fore.WHITE,end="")
                 action = input()
-                os.system('cls')
+                self.__manager.printHeader()
                 if action == "1":
                     self.__manager.gotoClass("lookupcustomermenu")
                 else:
