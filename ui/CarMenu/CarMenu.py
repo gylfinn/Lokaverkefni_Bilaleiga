@@ -10,15 +10,24 @@ class CarMenu:
         car_menu_selection = ""
         while(car_menu_selection !="9"):
             print(Fore.GREEN,end="")
-            print("1. Car Administration")
-            print("2. Fleet Manager")
+            if self.__manager.isAdmin():
+                print("1. Car Administration")
+                print("2. Fleet Manager")
+            else:
+                print("1. Fleet Manager")
             print(Fore.RED,end="")
             print("9. Back")
             print(Fore.WHITE,end="")
             car_menu_selection = input()
             if car_menu_selection == "1":
-                self.__manager.gotoClass("caradministrationmenu")
+                if self.__manager.isAdmin():
+                    self.__manager.gotoClass("caradministrationmenu")
+                else:
+                    self.__manager.gotoClass("fleetmenu")
             elif car_menu_selection == "2":
-                self.__manager.gotoClass("fleetmenu")
+                if self.__manager.isAdmin():
+                    self.__manager.gotoClass("fleetmenu")
+                else:
+                    pass
             elif car_menu_selection =="9":
                 self.__manager.gotoClass("mainmenu")
