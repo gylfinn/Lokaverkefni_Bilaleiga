@@ -18,7 +18,7 @@ Bíll í leigu: JKE04 , Yaris
 Bíll á lausu: PO996 , Subaru Impreza
 
 Dæmi um Order ID (til að fletta upp pöntun):
-Tölur frá 1 - 8
+Tölur frá 1 - 6
 
 # A-Kröfur
 - Birta alla lausa bíla: ✔
