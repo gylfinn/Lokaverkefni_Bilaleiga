@@ -9,10 +9,8 @@ class CurrentRentals:
         self.__manager.printHeader()
         menu_selection = ""
         while(menu_selection !="9"):
-            self.__manager.getVehicleManager().loadVehicles()
-            self.__manager.getVehicleManager().loadRentedVehicles()
             Vehicles = self.__manager.getVehicleManager().getRentedVehicles()
-            print(Fore.YELLOW,end="")
+            print(Fore.BLUE,end="")
             for vehicle in Vehicles:
                 print(vehicle)
             print(Fore.RED,end="")

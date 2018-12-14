@@ -11,7 +11,7 @@ class RentCar:
         while(menu_selection !="9"):
             self.__manager.getVehicleManager().loadVehicles()
             Vehicles = self.__manager.getVehicleManager().getAvailable()
-            print(Fore.YELLOW,end="")
+            print(Fore.BLUE,end="")
             for vehicle in Vehicles:
                 print(vehicle)
             regnum = input("Enter Registration Number of the Vehicle: ")

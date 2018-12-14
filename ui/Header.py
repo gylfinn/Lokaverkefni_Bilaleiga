@@ -50,7 +50,7 @@ class Header:
         elif location == "overview":
             dirlocation = "Main Menu > Cars > Fleet > Overview"
         elif location == "currentrentals":
-            dirlocation = "Main Menu > Cars > Fleet > Current Rentals"
+            dirlocation = "Main Menu > Cars > Fleet > Rented Cars"
         elif location == "available":
             dirlocation = "Main Menu > Cars > Fleet > Available cars"
         elif location == "returncar":

@@ -11,7 +11,7 @@ class FleetMenu:
         while(fleet_menu_selection !="9"):
             print(Fore.GREEN,end="")
             print("1. Overview")
-            print("2. Current Rentals")
+            print("2. Rented Cars")
             print("3. Available")
             print("4. Return Car")
             print("5. Rent Car")

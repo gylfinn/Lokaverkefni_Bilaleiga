@@ -150,6 +150,7 @@ class MenuManager:
     def gotoClass(self, location):
         self.__last_location = self.__location
         self.__location = location
+        self.__header.setNextMenu(location)
 
         if self.__location == MAINMENU:
             self.__main_menu.main_menu()
