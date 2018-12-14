@@ -15,7 +15,10 @@ class ReturnCar:
             for vehicle in Vehicles:
                 print(vehicle)
             regnum = input("Enter Registration Number of the Vehicle: ")
-            change_rented_status = self.__manager.getVehicleManager().changeVehicleStatus(regnum)
+            try:
+                change_rented_status = self.__manager.getVehicleManager().changeVehicleStatus(regnum)
+            except:
+                print("Wrong Registration Number")
             if change_rented_status:
                 print("Successfully changed the rented status of {}.".format(regnum))
             else:
