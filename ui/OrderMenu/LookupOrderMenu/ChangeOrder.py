@@ -15,7 +15,8 @@ class ChangeOrder:
         change_order_menu_selection = ""
         order = self.__manager.getMetadata()
         while(change_order_menu_selection !="9"):
-            print("Changing order ", order.getOrderid())
+            print(order)
+            print("\nChanging order ", order.getOrderid())
             print(Fore.RED, "***Leaving field empty will keep the default the value***", Fore.WHITE)
             print("Changing SSN")
             order.setCustomerSSN(input() or order.getCustomerSSN())
