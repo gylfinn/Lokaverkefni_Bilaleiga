@@ -39,10 +39,18 @@ class OrderManager(object):
         self.__Orders_Data.clear()
         for order in self.__Orders:
             self.__Orders_Data.append([order.getOrderid(), order.getCarRegistration(), order.getCustomerSSN(), datetime.strftime(order.getDateFrom(), "%d/%m/%y %H:%M"), datetime.strftime(order.getDateTo(), "%d/%m/%y %H:%M"), order.getPrice()])
-
+    def getUpCommingOrders(self):
+        sorted_orders = self.getOrders(by_dates=True)
+        up_comming = list()
+        for order in sorted_orders:
+            if order.getDateFrom() > datetime.now():
+                up_comming.append(order)
+        return up_comming
     def getOrders(self, by_dates = False):
         if by_dates:
-            return self.__Orders #TODO: Látta þetta virka
+            sorted_orders = sorted(self.__Orders, key=lambda Order: Order.getDateFrom())
+            return sorted_orders
+
         else:
             return self.__Orders
 

@@ -6,6 +6,7 @@ from services.OrderManager import OrderManager
 from services.CustomerManager import CustomerManager
 
 from ui.OrderMenu.OrderMenu import OrderMenu
+from ui.OrderMenu.ShowAllOrdersMenu import ShowAllOrdersMenu
 from ui.OrderMenu.LookupOrderMenu import LookupOrderMenu
 from ui.OrderMenu.LookupOrderMenu.CancelOrder import CancelOrder
 from ui.OrderMenu.LookupOrderMenu.ChangeOrder import ChangeOrder
@@ -44,6 +45,7 @@ MAINMENU = "mainmenu"
 ORDERMENU = "ordermenu"
 LOOKUPORDERMENU = "lookupordermenu"
 UPCOMINGORDERS = "upcomingorders"
+SHOWALLORDERS = "showallorders"
 NEWORDER = "neworder"
 CUSTMENU = "custmenu"
 LOOKUPCUSTOMERMENU = "lookupcustomermenu"
@@ -88,6 +90,7 @@ class MenuManager:
         self.__cancel_order = CancelOrder(self)
         self.__change_order = ChangeOrder(self)
         # self.__chargeback_order = ChargebackOrder(self)
+        self.__show_all_orders = ShowAllOrdersMenu(self)
         self.__car_menu = CarMenu(self)
         self.__car_administration_menu = CarAdministrationMenu(self)
         self.__register_new_car_menu = RegisterNewCar(self)
@@ -151,6 +154,8 @@ class MenuManager:
             self.__login_menu.login_menu()
         elif self.__location == ORDERMENU:
             self.__order_menu.orderMenu()
+        elif self.__location == SHOWALLORDERS:
+            self.__show_all_orders.showOrdersMenu()
         elif self.__location == LOOKUPORDERMENU:
             self.__lookup_order_menu.lookupOrderMenu()
         elif self.__location == UPCOMINGORDERS:

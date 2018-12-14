@@ -12,7 +12,7 @@ class UpcomingOrders:
         self.__manager.printHeader()
         upcoming_order_menu_selection = ""
         while(upcoming_order_menu_selection !="9"):
-            Orders = self.__manager.getOrderManager().getOrders(True)
+            Orders = self.__manager.getOrderManager().getUpCommingOrders()
             for order in Orders:
                 print(Fore.YELLOW,end="")
                 print(order)

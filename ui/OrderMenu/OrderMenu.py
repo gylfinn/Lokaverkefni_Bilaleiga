@@ -13,9 +13,10 @@ class OrderMenu:
             print("Order Menu")
             print(Fore.GREEN,end="")
             print("1. Upcoming Orders")
-            print("2. New Order")
-            print("3. Look up order")
-            print("4. Price Calculator")
+            print("2. Show All Orders")
+            print("3. New Order")
+            print("4. Look Up Order")
+            print("5. Price Calculator")
             print(Fore.RED,end="")
             print("9. Back")
             print(Fore.WHITE,end="")
@@ -23,10 +24,12 @@ class OrderMenu:
             if order_menu_selection == "1":
                 self.__manager.gotoClass("upcomingorders")
             elif order_menu_selection == "2":
-                self.__manager.gotoClass("neworder")
+                self.__manager.gotoClass("showallorders")
             elif order_menu_selection == "3":
-                self.__manager.gotoClass("lookupordermenu")
+                self.__manager.gotoClass("neworder")
             elif order_menu_selection == "4":
+                self.__manager.gotoClass("lookupordermenu")
+            elif order_menu_selection == "5":
                 self.__manager.gotoClass("pricecalculator")
             elif order_menu_selection =="9":
                 self.__manager.gotoClass("mainmenu")
