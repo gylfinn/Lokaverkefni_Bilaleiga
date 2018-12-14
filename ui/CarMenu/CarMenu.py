@@ -13,6 +13,7 @@ class CarMenu:
             if self.__manager.isAdmin():
                 print("1. Car Administration")
                 print("2. Fleet Manager")
+                print("3. Car Order History")
             else:
                 print("1. Fleet Manager")
             print(Fore.RED,end="")
@@ -28,6 +29,8 @@ class CarMenu:
                 if self.__manager.isAdmin():
                     self.__manager.gotoClass("fleetmenu")
                 else:
-                    pass
+                    pass #????
+            elif car_menu_selection == "3":
+                self.__manager.gotoClass("carhistory")
             elif car_menu_selection =="9":
                 self.__manager.gotoClass("mainmenu")

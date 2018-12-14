@@ -50,17 +50,20 @@ class OrderManager(object):
         if by_dates:
             sorted_orders = sorted(self.__Orders, key=lambda Order: Order.getDateFrom())
             return sorted_orders
-
         else:
             return self.__Orders
-
+    def getOrdersByVehicle(self, reg_number):
+        vehicle_history = list()
+        for order in self.__Orders:
+            if order.getCarRegistration().lower() == reg_number.lower():
+                vehicle_history.append(order)
+        return vehicle_history
     def getOrdersByCustomer(self, SSN):
         customer_history = list()
         for order in self.__Orders:
             if int(order.getCustomerSSN()) == int(SSN):
                 customer_history.append(order)
         return customer_history
-
     def findOrder(self, search_key): # Hægt að search ID, Registration Number og SSN
         for order in self.__Orders:
             if str(order.getOrderid()) == search_key:

@@ -23,6 +23,7 @@ from ui.CustMenu.LookupCustomer import LookUpCustomer
 from ui.CustMenu.RegisterCustomer import RegisterCustomer
 
 from ui.CarMenu.CarMenu import CarMenu
+from ui.CarMenu.VehicleHistoryMenu import VehicleHistoryMenu
 from ui.CarMenu.CarAdministrationMenu.CarAdministrationMenu import CarAdministrationMenu
 from ui.CarMenu.CarAdministrationMenu.DeregisterCar import DeregisterCar
 from ui.CarMenu.CarAdministrationMenu.RegisterNewCar import RegisterNewCar
@@ -53,6 +54,7 @@ UPDATEINFORMATION = "updateinformation"
 LOOKUPCUSTOMERHISTORY = "lookupcustomerhistory"
 CARMENU = "carmenu"
 FLEETMENU = "fleetmenu"
+CARHISTORY = "carhistory"
 CARADMINISTRATIONMENU = "caradministrationmenu"
 DEREGISTERCAR = "deregistercar"
 REGISTERNEWCAR = "registernewcar"
@@ -92,6 +94,7 @@ class MenuManager:
         # self.__chargeback_order = ChargebackOrder(self)
         self.__show_all_orders = ShowAllOrdersMenu(self)
         self.__car_menu = CarMenu(self)
+        self.__car_history = VehicleHistoryMenu(self)
         self.__car_administration_menu = CarAdministrationMenu(self)
         self.__register_new_car_menu = RegisterNewCar(self)
         self.__deregister_car_menu = DeregisterCar(self)
@@ -180,6 +183,8 @@ class MenuManager:
             self.__change_order.changeOrder()
         elif self.__location == CARMENU:
             self.__car_menu.carMenu()
+        elif self.__location == CARHISTORY:
+            self.__car_history.showVehicleHistory()
         elif self.__location == CARADMINISTRATIONMENU:
             self.__car_administration_menu.carAdministrationMenu()
         elif self.__location == REGISTERNEWCAR:
