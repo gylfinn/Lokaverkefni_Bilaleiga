@@ -1,5 +1,6 @@
 import os
 from services.servicehelpers.Validator import Validator
+from services.CalculatePrice import CalculatePrice
 from datetime import datetime
 from colorama import Fore
 
@@ -75,7 +76,9 @@ class NewOrder:
                 except ValueError as e:
                     date_to_validation = None
                     print(Fore.RED, e)
-            total_price = input("Total price: ")
+            calc = CalculatePrice()
+            date_diff = date_to_validation - date_from_validation
+            total_price = calc.calculatePrice(date_diff.days, vehicle.getType())
             new_order = self.__manager.getOrderManager().createOrder(orderid, car_regnum, customer_ssn, date_from, date_to, total_price)
             if new_order:
                 self.__manager.getVehicleManager().changeVehicleStatus(car_regnum)

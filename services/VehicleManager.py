@@ -69,27 +69,12 @@ class VehicleManager(object):
             return False
 
     def changeVehicleStatus(self, registration_number):
-        # vehid = self.findVehicleID(registration_number)
-        for vehicle in self.__Vehicles_Data:
-            if vehicle[REGISTRATION_NUMBER] == registration_number:
-                if vehicle[RENTED] == 'True':
-                    vehicle[RENTED] = False
-                    self.save()
-                    return True
-                elif vehicle[RENTED] == 'False':
-                    vehicle[RENTED] = True
-                    self.save()
-                    return True
-                elif vehicle[RENTED] == True:
-                    vehicle[RENTED] = False
-                    self.save()
-                    return True
-                elif vehicle[RENTED] == False:
-                    vehicle[RENTED] = True
-                    self.save()
-                    return True
+        veh = self.findVehicle(registration_number)
+        if veh.isRented():
+            veh.setRented(False)
         else:
-            return
+            veh.setRented(True)
+        self.save()
     def findVehicle(self, registration_number):
         for vehicle in self.__Vehicles:
             if vehicle.getRegistrationNum().lower() == registration_number.lower():
@@ -109,6 +94,17 @@ class VehicleManager(object):
     def getRentedVehicles(self):
         return self.__VehiclesInRent
 
+    def updateVehicleData(self):
+        self.__Vehicles_Data.clear()
+        for vehicle in self.__Vehicles:
+            self.__Vehicles_Data.append([vehicle.getRegistrationNum(),
+            vehicle.isRented(),
+            vehicle.getModelYear(),
+            vehicle.getBrand(),
+            vehicle.getPrice(),
+            vehicle.getType()
+            ])
     def save(self):
+        self.updateVehicleData()
         self.__DataSaver.writeVehicleData(self.__Vehicles_Data)
         
