@@ -1,5 +1,6 @@
 # Lokaverkefni_Bilaleiga
 3 Vikna verkefni.
+Linkur að myndbandinu - https://www.youtube.com/watch?v=qTZAiYOTq4U
 
 # Stulla info
 Til þess að einfalda þér yfirferðina: 
