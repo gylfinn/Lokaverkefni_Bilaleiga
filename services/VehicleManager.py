@@ -69,14 +69,18 @@ class VehicleManager(object):
             return False
 
     def changeVehicleStatus(self, registration_number):
-        veh = self.findVehicle(registration_number)
-        if veh.isRented():
-            veh.setRented(False)
-        else:
-            veh.setRented(True)
-        self.loadAvailableVehicles()
-        self.loadRentedVehicles()
-        self.save()
+        try:
+            veh = self.findVehicle(registration_number)
+            if veh.isRented():
+                veh.setRented(False)
+            else:
+                veh.setRented(True)
+            self.loadAvailableVehicles()
+            self.loadRentedVehicles()
+            self.save()
+            return True
+        except:
+            print("Not a Valid Registration number") 
     def findVehicle(self, registration_number):
         for vehicle in self.__Vehicles:
             if vehicle.getRegistrationNum().lower() == registration_number.lower():
