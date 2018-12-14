@@ -30,6 +30,8 @@ class LookUpCustomerMenu:
                 print("2. Customer Order History")
                 if self.__manager.isAdmin():
                     print("3. Remove Customer")
+                else:
+                    print("\033[1;30;40m3. Remove Customer")
                 print(Fore.RED,end="")
                 print("9. Go Back")
                 print(Fore.WHITE,end="")
@@ -57,6 +59,8 @@ class LookUpCustomerMenu:
                                 self.__manager.gotoClass("custmenu")
                         else:
                             self.__manager.gotoClass("custmenu")
+                    else:
+                        self.__manager.printHeader()
                 elif selection == "9":
                     self.__manager.gotoClass("custmenu")
                     self.__manager.clearMetadata()
