@@ -9,8 +9,9 @@ class UpdateInformation:
         self.__manager.printHeader()
         information_to_update = ""
         customer = self.__manager.getMetadata()
+        print(customer)
         while(information_to_update != "9"):
-            print("1. Change customer ", customer.getName())
+            print("\n1. Change customer ", customer.getName())
             print(Fore.RED, "***Leaving field empty will keep the default the value***", Fore.WHITE)
             print("2. Change SSN")
             customer.setSSN(input() or customer.getSSN())
