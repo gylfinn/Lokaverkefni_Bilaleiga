@@ -74,6 +74,8 @@ class VehicleManager(object):
             veh.setRented(False)
         else:
             veh.setRented(True)
+        self.loadAvailableVehicles()
+        self.loadRentedVehicles()
         self.save()
     def findVehicle(self, registration_number):
         for vehicle in self.__Vehicles:
