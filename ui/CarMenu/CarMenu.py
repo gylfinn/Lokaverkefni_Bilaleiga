@@ -1,5 +1,5 @@
 import os
-from colorama import Fore
+from colorama import *
 
 #This class is only 
 class CarMenu:
@@ -15,7 +15,11 @@ class CarMenu:
                 print("2. Fleet Manager")
                 print("3. Car Order History")
             else:
-                print("1. Fleet Manager")
+                print("\033[1;30;40m1. Car Administration")
+                print(Fore.GREEN,end="")
+                print("2. Fleet Manager")
+                print("3. Car Order History")
+
             print(Fore.RED,end="")
             print("9. Back")
             print(Fore.WHITE,end="")
@@ -24,12 +28,9 @@ class CarMenu:
                 if self.__manager.isAdmin():
                     self.__manager.gotoClass("caradministrationmenu")
                 else:
-                    self.__manager.gotoClass("fleetmenu")
+                    self.__manager.printHeader()
             elif car_menu_selection == "2":
-                if self.__manager.isAdmin():
-                    self.__manager.gotoClass("fleetmenu")
-                else:
-                    pass #????
+                self.__manager.gotoClass("fleetmenu")
             elif car_menu_selection == "3":
                 self.__manager.gotoClass("carhistory")
             elif car_menu_selection =="9":
